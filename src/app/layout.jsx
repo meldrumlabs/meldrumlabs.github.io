@@ -10,14 +10,22 @@ export const metadata = {
     template: '%s - Meldrum Labs',
     default: 'about',
   },
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
-    title: 'meldrum labs',
-    description: 'Reliable Data Systems',
+    title: 'Meldrum Labs',
+    description: 'Observability for Builders. For engineers who build, ship, and get paged.',
     images: [{
-      url: '/api/og?title=meldrum&subtitle=reliable and innovative data systems',
+      url: '/api/og?title=meldrum&subtitle=observability for builders',
       width: 1200,
       height: 630,
-      alt: 'Reliable and Innovative Data Systems',
+      alt: 'Observability for Builders',
       type: 'image/png',
     }],
     type: 'website'

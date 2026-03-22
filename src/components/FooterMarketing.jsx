@@ -1,83 +1,121 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import Logo from "@/components/Logo";
-import { ThemeToggle } from './ThemeToggle';
-import { BlueskyIcon, DiscordIcon, GitHubIcon, MastodonIcon, TwitterIcon, YouTubeIcon } from './Footer';
-
 const navigation = {
-  learn: [
-    { name: 'Team', href: '/team' },
+  product: [
+    { name: 'Enya', href: '/blog/enya' },
     { name: 'Blog', href: '/blog' },
   ],
-  connect: [
-    { name: 'Email', href: 'contact@meldrumlabs.com' },
-    { name: 'X', href: 'https://x.com/meldrumlabs' },
+  company: [
+    { name: 'Team', href: '/team' },
+    { name: 'Contact', href: 'mailto:contact@meldrumlabs.com' },
   ],
-  social: [
-        {
-      name: 'GitHub',
-      href: 'https://github.com/meldrumlabs',
-      icon: GitHubIcon,
-    },
+  socials: [
+    { name: 'LinkedIn', href: 'https://linkedin.com/company/meldrumlabs' },
+    { name: 'X', href: 'https://x.com/meldrumlabs' },
   ],
 }
 
 export function FooterMarketing() {
   return (
-    <footer className="bg-iroh-gray-1000" aria-labelledby="footer-heading">
+    <footer className="border-t border-iroh-gray-800" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="space-y-8">
-            <p className="text-sm leading-6 text-meldrum-green-400">
+      <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+        {/* Main footer content */}
+        <div className="md:flex md:justify-between md:gap-8">
+          {/* Left side - Brand */}
+          <div className="space-y-6 md:max-w-xs">
+            {/* Logo + Company name */}
+            <div className="flex items-center gap-0">
+              <Image
+                src="/android-chrome-192x192.png"
+                alt="Meldrum Labs"
+                width={40}
+                height={40}
+                className="h-10 w-10"
+              />
+              <span className="text-lg font-semibold text-meldrum-green-400">Meldrum Labs</span>
+            </div>
+
+            {/* Tagline */}
+            <p className="text-sm text-iroh-gray-400 leading-relaxed">
               Data Systems out of Sweden.
             </p>
-            <div className="flex space-x-6">
-              {navigation.social.map((item) => (
-                <Link key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
-                  <span className="sr-only">{item.name}</span>
-                  <item.icon className="h-6 w-6" aria-hidden="true" />
-                </Link>
-              ))}
-            </div>
           </div>
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div />
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-meldrum-green-400">Learn</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.learn.map((item) => (
-                    <li key={item.name}>
-                      <Link href={item.href} className="text-sm leading-6 text-meldrum-orange-400 hover:text-white">
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+
+          {/* Right side - Navigation columns */}
+          <div className="mt-12 md:mt-0 flex gap-12 justify-end">
+            {/* Product column */}
+            <div>
+              <h3 className="text-sm font-semibold text-meldrum-green-400 uppercase tracking-wider">
+                Product
+              </h3>
+              <ul className="mt-4 space-y-3">
+                {navigation.product.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="text-sm text-meldrum-orange-400 hover:text-meldrum-green-400 transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm font-semibold leading-6 text-meldrum-green-400">Connect</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.connect.map((item) => (
-                    <li key={item.name}>
-                      <Link href={item.href} className="text-sm leading-6 text-meldrum-orange-400 hover:text-white">
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+
+            {/* Company column */}
+            <div>
+              <h3 className="text-sm font-semibold text-meldrum-green-400 uppercase tracking-wider">
+                Company
+              </h3>
+              <ul className="mt-4 space-y-3">
+                {navigation.company.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="text-sm text-meldrum-orange-400 hover:text-meldrum-green-400 transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Socials column */}
+            <div>
+              <h3 className="text-sm font-semibold text-meldrum-green-400 uppercase tracking-wider">
+                Socials
+              </h3>
+              <ul className="mt-4 space-y-3">
+                {navigation.socials.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="text-sm text-meldrum-orange-400 hover:text-meldrum-green-400 transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
-        <div className="mt-16 flex border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-xs leading-5 text-meldrum-green-400 mr-auto">&copy; 2025 Meldrum Labs AB.</p>
+
+        {/* Bottom bar */}
+        <div className="mt-12 pt-8 border-t border-iroh-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-iroh-gray-500">
+            &copy; {new Date().getFullYear()} Meldrum Labs AB. All rights reserved.
+          </p>
+          <p className="text-xs text-iroh-gray-600">
+            Crafted in Stockholm
+          </p>
         </div>
       </div>
     </footer>

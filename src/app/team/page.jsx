@@ -23,13 +23,16 @@ function TeamMember({ member }) {
         <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-center">
           {member.image && (
             <div className="flex-shrink-0">
-              <Image
-                src={member.image}
-                alt={member.name}
-                width={160}
-                height={160}
-                className="object-cover w-[160px] h-[160px]"
-              />
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-meldrum-green-400/20 to-meldrum-orange-400/20 blur-xl" />
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={160}
+                  height={160}
+                  className="relative object-cover w-[160px] h-[160px] rounded-full ring-2 ring-meldrum-green-400/30"
+                />
+              </div>
             </div>
           )}
           <div className="flex-1">
@@ -55,10 +58,10 @@ export default function Team() {
       <BlogHeader />
       <div className="my-20 mx-auto max-w-2xl min-h-screen lg:mt-32">
         <header className="max-w-2xl px-4 sm:px-0">
-          <h1 className="text-4xl font-space font-bold tracking-tight text-meldrum-green-600 dark:text-meldrum-green-400 sm:text-4xl">
+          <h1 className="text-4xl md:text-5xl font-space font-bold tracking-tight text-meldrum-green-600 dark:text-meldrum-green-400">
             Team
           </h1>
-          <p className="mt-6 text-base text-meldrum-orange-500 dark:text-meldrum-orange-400">
+          <p className="mt-6 text-lg md:text-xl leading-relaxed text-meldrum-orange-500 dark:text-meldrum-orange-400">
             We at Meldrum Labs are builders at heart and deeply care about building reliable and innovative data systems.
           </p>
         </header>
