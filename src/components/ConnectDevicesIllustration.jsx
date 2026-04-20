@@ -15,7 +15,7 @@ export const ConnectDevicesIllustrationDark = ({ className }) => (
         {`
           .text {
             fill: #7c7cf7;
-            font-family: SpaceMono-Regular, 'Space Mono';
+            font-family: 'Geist Mono', monospace;
             font-size: 12.59px;
             letter-spacing: .1em;
           }
@@ -88,7 +88,7 @@ export const ConnectDevicesIllustrationLight = ({ className }) => (
         {`
           .text {
             fill: #7c7cf7;
-            font-family: SpaceMono-Regular, 'Space Mono';
+            font-family: 'Geist Mono', monospace;
             font-size: 12.59px;
             letter-spacing: .1em;
           }
