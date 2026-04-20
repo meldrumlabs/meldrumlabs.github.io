@@ -28,8 +28,8 @@ export default {
         ]
       },
       fontFamily: {
-        'space': ['Space Grotesk', 'sans-serif'],
-        'spaceMono': ['Space Mono', 'sans-serif'],
+        'space': ['Geist', 'sans-serif'],
+        'spaceMono': ['Geist Mono', 'monospace'],
         'koulen': 'var(--font-koulen-regular)'
       },
       boxShadow: {

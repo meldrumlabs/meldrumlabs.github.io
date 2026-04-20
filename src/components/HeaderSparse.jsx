@@ -87,12 +87,6 @@ export function HeaderSparse() {
                   return <TopLevelNavItem key={i} href={item.href}>{item.content}</TopLevelNavItem>;
                 })}
               </ul>
-              <a
-                href="mailto:contact@meldrumlabs.com"
-                className="py-2 px-4 text-sm font-semibold bg-meldrum-green-500 text-gray-900 transition-all duration-300 hover:bg-meldrum-green-400 hover:scale-105"
-              >
-                Get in Touch
-              </a>
             </div>
           </div>
         </div>
@@ -104,12 +98,6 @@ export function HeaderSparse() {
           {navItems.map((item, i ) => {
             return <Link key={i} href={item.href} className="text-gray-500 block px-3 py-2 rounded-md text-base font-medium">{item.content}</Link>;
           })}
-          <a
-            href="mailto:contact@meldrumlabs.com"
-            className="block mx-3 mt-4 py-2 px-4 text-sm font-semibold text-center bg-meldrum-green-500 text-gray-900"
-          >
-            Get in Touch
-          </a>
         </div>
       </div>
     </nav>

@@ -43,6 +43,7 @@ export function FooterMarketing() {
             <p className="text-sm text-iroh-gray-400 leading-relaxed">
               Data Systems out of Sweden.
             </p>
+
           </div>
 
           {/* Right side - Navigation columns */}

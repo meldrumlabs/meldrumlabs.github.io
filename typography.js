@@ -186,7 +186,7 @@ module.exports = ({ theme }) => ({
       h1: {
         color: 'var(--tw-prose-headings)',
         // TODO(b5): Use theme()
-        fontFamily: 'Space Grotesk',
+        fontFamily: 'Geist',
         fontWeight: '700',
         fontSize: theme('fontSize.2xl')[0],
         ...theme('fontSize.2xl')[1],
@@ -194,7 +194,7 @@ module.exports = ({ theme }) => ({
       },
       h2: {
         color: 'var(--tw-prose-headings)',
-        fontFamily: 'Space Grotesk',
+        fontFamily: 'Geist',
         fontWeight: '600',
         fontSize: theme('fontSize.lg')[0],
         ...theme('fontSize.lg')[1],
@@ -208,7 +208,7 @@ module.exports = ({ theme }) => ({
         fontWeight: '600',
         marginTop: theme('spacing.10'),
         marginBottom: theme('spacing.2'),
-        fontFamily: 'Space Grotesk',
+        fontFamily: 'Geist',
       },
 
       // Media
