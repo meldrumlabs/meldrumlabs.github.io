@@ -159,4 +159,15 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  ::selection {
+    background-color: rgba(152, 151, 26, 0.3);
+    color: #fff;
+  }
+
+  *:focus-visible {
+    outline: 2px solid rgba(152, 151, 26, 0.5);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 }
