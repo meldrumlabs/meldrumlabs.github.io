@@ -1,8 +1,9 @@
 import Image from 'next/image'
-import BlogHeader from '@/components/BlogHeader'
+import { HeaderSparse } from '@/components/HeaderSparse'
 import { FooterMarketing } from '@/components/FooterMarketing'
 import { GithubIcon } from '@/components/icons/GithubIcon'
 import { TwitterIcon } from '@/components/Footer'
+import { TeamHero } from '@/components/home/TeamHero'
 
 function LinkedInIcon(props) {
   return (
@@ -19,95 +20,84 @@ export const metadata = {
 
 export default function Team() {
   return (
-    <div className="bg-iroh-gray-900 text-iroh-gray-100">
-      <BlogHeader />
-      <main>
-        {/* Hero / Statement */}
-        <section className="max-w-3xl mx-auto px-6 md:px-8 pt-40 pb-12">
-          <span className="text-2xs uppercase tracking-[0.25em] text-iroh-gray-500 font-medium">
-            Team
-          </span>
-          <h1 className="mt-10 text-5xl md:text-7xl font-extrabold tracking-tight text-meldrum-green-400 leading-[1.02]">
-            Data systems,<br />built with care.
-          </h1>
-          <p className="mt-10 text-xl md:text-2xl text-iroh-gray-300 leading-relaxed font-light">
-            Meldrum Labs is a small team of data systems builders shaped by research, open source, and running systems in production. We partner with companies that need specialized infrastructure that is reliable by design, performant by default.
-          </p>
-        </section>
+    <div className="relative bg-iroh-gray-900 text-iroh-gray-100 font-space">
+      <HeaderSparse />
 
-        {/* Principles */}
-        <section className="max-w-3xl mx-auto px-6 md:px-8 pb-10">
-          <span className="text-2xs uppercase tracking-[0.25em] text-iroh-gray-500 font-medium">
-            Principles
-          </span>
-          <p className="mt-6 text-xl md:text-2xl text-iroh-gray-300 leading-relaxed font-light">
-            We build with <span className="text-iroh-gray-100 font-medium">urgency</span>, <span className="text-iroh-gray-100 font-medium">reliability</span>, and <span className="text-iroh-gray-100 font-medium">accountability</span>.
-          </p>
-        </section>
+      <main className="flex flex-col">
+        <TeamHero />
 
-        {/* Founder */}
-        <section className="max-w-3xl mx-auto px-6 md:px-8 pb-32">
-          <span className="text-2xs uppercase tracking-[0.25em] text-iroh-gray-500 font-medium">
-            Members
-          </span>
+        {/* Builders */}
+        <section className="max-w-6xl mx-auto px-6 md:px-10 w-full pt-8 pb-24">
+          <div className="relative">
+            {/* Editorial margin line */}
+            <div className="absolute -left-6 md:-left-10 top-0 bottom-0 w-px bg-iroh-gray-800/60" />
 
-          {/* Member */}
-          <div className="mt-8 md:grid md:grid-cols-[auto_1fr] md:gap-8 md:items-center">
-            <div className="shrink-0">
-              <div className="relative">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-meldrum-green-400/10 to-meldrum-orange-400/10 blur-2xl" />
+            <p className="text-base md:text-lg text-iroh-gray-400 mb-8 leading-relaxed text-center">
+              We build with urgency, reliability, and accountability.
+            </p>
+
+            <div className="mb-10 flex items-baseline gap-4">
+              <span className="text-sm font-medium text-iroh-gray-600 tabular-nums">01</span>
+              <h2 className="text-xl md:text-2xl font-bold text-meldrum-green-400 tracking-tight">
+                Builders
+              </h2>
+            </div>
+
+            <div className="md:grid md:grid-cols-[auto_1fr] md:gap-10 md:items-start">
+              <div className="shrink-0">
                 <Image
                   src="/images/team/max.jpg"
                   alt="Max Meldrum"
                   width={160}
                   height={160}
-                  className="relative object-cover w-[120px] h-[120px] md:w-[140px] md:h-[140px] rounded-full"
+                  className="object-cover w-[120px] h-[120px] md:w-[140px] md:h-[140px] rounded-full"
                 />
               </div>
-            </div>
-            <div className="mt-5 md:mt-0">
-              <h2 className="text-xl md:text-2xl font-bold text-meldrum-green-400 tracking-tight">
-                Max Meldrum
-              </h2>
-              <p className="mt-1 text-xs text-iroh-gray-500 font-spaceMono">
-                Founder
-              </p>
-              <p className="mt-4 text-base md:text-lg text-iroh-gray-300 leading-relaxed font-light">
-                A former PhD student at KTH&apos;s Data Systems Lab under Prof. Paris Carbone (co-creator of Apache Flink), he created µWheel, an award-winning embeddable aggregate management system. Now partnering with companies to build data systems they can trust in production.
-              </p>
-              <div className="mt-5 flex items-center gap-5 text-iroh-gray-400">
-                <a
-                  href="https://github.com/Max-Meldrum"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                  className="hover:text-meldrum-green-400 transition-colors"
-                >
-                  <GithubIcon className="w-5 h-5 fill-current" />
-                </a>
-                <a
-                  href="https://x.com/meldruum"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="X"
-                  className="hover:text-meldrum-green-400 transition-colors"
-                >
-                  <TwitterIcon className="w-[18px] h-[18px]" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/max-meldrum-1a46a291/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="hover:text-meldrum-green-400 transition-colors"
-                >
-                  <LinkedInIcon className="w-5 h-5" />
-                </a>
+              <div className="mt-6 md:mt-0">
+                <h3 className="text-xl md:text-2xl font-bold text-meldrum-green-400 tracking-tight">
+                  Max Meldrum
+                </h3>
+                <p className="mt-1 text-xs text-iroh-gray-500 font-spaceMono">
+                  Founder
+                </p>
+                <p className="mt-4 text-base text-meldrum-blue-300 leading-relaxed">
+                  A former PhD student at KTH&apos;s Data Systems Lab under Prof. Paris Carbone (co-creator of Apache Flink), he created µWheel, an award-winning embeddable aggregate management system. Now partnering with companies to build data systems they can trust in production.
+                </p>
+                <div className="mt-5 flex items-center gap-5 text-iroh-gray-400">
+                  <a
+                    href="https://github.com/Max-Meldrum"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                    className="hover:text-meldrum-orange-400 transition-colors"
+                  >
+                    <GithubIcon className="w-5 h-5 fill-current" />
+                  </a>
+                  <a
+                    href="https://x.com/meldruum"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="X"
+                    className="hover:text-meldrum-orange-400 transition-colors"
+                  >
+                    <TwitterIcon className="w-[18px] h-[18px]" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/max-meldrum-1a46a291/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="hover:text-meldrum-orange-400 transition-colors"
+                  >
+                    <LinkedInIcon className="w-5 h-5" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </main>
+
       <FooterMarketing />
     </div>
   )
