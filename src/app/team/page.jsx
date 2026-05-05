@@ -27,62 +27,71 @@ export default function Team() {
         <TeamHero />
 
         {/* Builders */}
-        <section className="max-w-6xl mx-auto px-6 md:px-10 w-full py-24">
-          <div className="mb-10 flex items-baseline gap-4">
-            <span className="text-sm font-medium text-iroh-gray-600 tabular-nums">01</span>
-            <h2 className="text-xl md:text-2xl font-bold text-meldrum-green-400 tracking-tight">
-              Builders
-            </h2>
-          </div>
+        <section className="max-w-6xl mx-auto px-6 md:px-10 w-full pt-8 pb-24">
+          <div className="relative">
+            {/* Editorial margin line */}
+            <div className="absolute -left-6 md:-left-10 top-0 bottom-0 w-px bg-iroh-gray-800/60" />
 
-          <div className="md:grid md:grid-cols-[auto_1fr] md:gap-10 md:items-start">
-            <div className="shrink-0">
-              <Image
-                src="/images/team/max.jpg"
-                alt="Max Meldrum"
-                width={160}
-                height={160}
-                className="object-cover w-[120px] h-[120px] md:w-[140px] md:h-[140px] rounded-full"
-              />
+            <p className="text-base md:text-lg text-iroh-gray-400 mb-8 leading-relaxed text-center">
+              We build with urgency, reliability, and accountability.
+            </p>
+
+            <div className="mb-10 flex items-baseline gap-4">
+              <span className="text-sm font-medium text-iroh-gray-600 tabular-nums">01</span>
+              <h2 className="text-xl md:text-2xl font-bold text-meldrum-green-400 tracking-tight">
+                Builders
+              </h2>
             </div>
-            <div className="mt-6 md:mt-0">
-              <h3 className="text-xl md:text-2xl font-bold text-meldrum-green-400 tracking-tight">
-                Max Meldrum
-              </h3>
-              <p className="mt-1 text-xs text-iroh-gray-500 font-spaceMono">
-                Founder
-              </p>
-              <p className="mt-4 text-base text-meldrum-blue-300 leading-relaxed">
-                A former PhD student at KTH&apos;s Data Systems Lab under Prof. Paris Carbone (co-creator of Apache Flink), he created µWheel, an award-winning embeddable aggregate management system. Now partnering with companies to build data systems they can trust in production.
-              </p>
-              <div className="mt-5 flex items-center gap-5 text-iroh-gray-400">
-                <a
-                  href="https://github.com/Max-Meldrum"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                  className="hover:text-meldrum-orange-400 transition-colors"
-                >
-                  <GithubIcon className="w-5 h-5 fill-current" />
-                </a>
-                <a
-                  href="https://x.com/meldruum"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="X"
-                  className="hover:text-meldrum-orange-400 transition-colors"
-                >
-                  <TwitterIcon className="w-[18px] h-[18px]" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/max-meldrum-1a46a291/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="hover:text-meldrum-orange-400 transition-colors"
-                >
-                  <LinkedInIcon className="w-5 h-5" />
-                </a>
+
+            <div className="md:grid md:grid-cols-[auto_1fr] md:gap-10 md:items-start">
+              <div className="shrink-0">
+                <Image
+                  src="/images/team/max.jpg"
+                  alt="Max Meldrum"
+                  width={160}
+                  height={160}
+                  className="object-cover w-[120px] h-[120px] md:w-[140px] md:h-[140px] rounded-full"
+                />
+              </div>
+              <div className="mt-6 md:mt-0">
+                <h3 className="text-xl md:text-2xl font-bold text-meldrum-green-400 tracking-tight">
+                  Max Meldrum
+                </h3>
+                <p className="mt-1 text-xs text-iroh-gray-500 font-spaceMono">
+                  Founder
+                </p>
+                <p className="mt-4 text-base text-meldrum-blue-300 leading-relaxed">
+                  A former PhD student at KTH&apos;s Data Systems Lab under Prof. Paris Carbone (co-creator of Apache Flink), he created µWheel, an award-winning embeddable aggregate management system. Now partnering with companies to build data systems they can trust in production.
+                </p>
+                <div className="mt-5 flex items-center gap-5 text-iroh-gray-400">
+                  <a
+                    href="https://github.com/Max-Meldrum"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                    className="hover:text-meldrum-orange-400 transition-colors"
+                  >
+                    <GithubIcon className="w-5 h-5 fill-current" />
+                  </a>
+                  <a
+                    href="https://x.com/meldruum"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="X"
+                    className="hover:text-meldrum-orange-400 transition-colors"
+                  >
+                    <TwitterIcon className="w-[18px] h-[18px]" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/max-meldrum-1a46a291/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="hover:text-meldrum-orange-400 transition-colors"
+                  >
+                    <LinkedInIcon className="w-5 h-5" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>

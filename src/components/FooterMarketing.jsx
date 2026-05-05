@@ -2,12 +2,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const navigation = {
-  product: [
+  openSource: [
     { name: 'Enya', href: '/blog/enya' },
-    { name: 'Blog', href: '/blog' },
+    { name: 'GitHub', href: 'https://github.com/meldrumlabs' },
   ],
   company: [
     { name: 'Team', href: '/team' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: 'mailto:contact@meldrumlabs.com' },
   ],
   socials: [
@@ -43,10 +44,10 @@ export function FooterMarketing() {
           <div className="mt-10 md:mt-0 flex gap-12">
             <div>
               <h3 className="text-xs font-semibold text-meldrum-green-400 uppercase tracking-wider">
-                Product
+                Open Source
               </h3>
               <ul className="mt-4 space-y-2.5">
-                {navigation.product.map((item) => (
+                {navigation.openSource.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
