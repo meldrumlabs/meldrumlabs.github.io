@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 function AnimatedLine({ text, className, baseDelay = 0 }) {
   const characters = text.split('')
 
@@ -75,6 +76,38 @@ export function HeroSection() {
             />
           </h1>
 
+          {/* Subheadline + CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+            className="mt-10 md:mt-12"
+          >
+            <p className="text-lg md:text-xl text-meldrum-blue-300 leading-relaxed max-w-xl">
+              For companies who need a build partner that treats their stack like their own.
+            </p>
+
+            <div className="mt-10">
+              <Link
+                href="/services"
+                className="group inline-flex items-center text-sm font-medium text-meldrum-pink-100 hover:text-meldrum-pink-200 transition-colors duration-300"
+              >
+                <span className="relative">
+                  How we work
+                  <span className="absolute left-0 -bottom-1 w-full h-px bg-meldrum-pink-100/40 group-hover:bg-meldrum-pink-200/60 transition-colors duration-300" />
+                </span>
+                <svg
+                  className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={1.5}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                </svg>
+              </Link>
+            </div>
+          </motion.div>
 
         </div>
       </div>
