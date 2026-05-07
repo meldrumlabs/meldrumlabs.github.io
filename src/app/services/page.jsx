@@ -1,176 +1,164 @@
-import BlogHeader from '@/components/BlogHeader'
+import { HeaderSparse } from '@/components/HeaderSparse'
 import { FooterMarketing } from '@/components/FooterMarketing'
 import { FadeInSection } from '@/components/FadeInSection'
 import Link from 'next/link'
 
-function SectionDivider() {
-  return (
-    <div className="max-w-3xl mx-auto px-6 md:px-8">
-      <div className="h-px bg-gradient-to-r from-transparent via-iroh-gray-700 to-transparent" />
-    </div>
-  )
+export const metadata = {
+  title: 'Services',
+  description: 'How Meldrum Labs partners with companies to build data infrastructure.',
 }
 
 export default function Services() {
   return (
-    <div className="bg-iroh-gray-900 text-iroh-gray-100">
-      <BlogHeader />
+    <div className="relative bg-iroh-gray-900 text-iroh-gray-100 font-space">
+      <HeaderSparse />
 
-      <main>
+      <main className="flex flex-col">
         {/* Hero */}
-        <section className="max-w-3xl mx-auto px-6 md:px-8 pt-40 pb-24">
-          <span className="text-2xs uppercase tracking-[0.25em] text-iroh-gray-500 font-medium">
-            Services
-          </span>
-          <p className="mt-10 text-2xl md:text-3xl text-iroh-gray-300 leading-relaxed font-light max-w-xl">
-            Meldrum Labs partners with a small number of teams to design, build, and harden real-time data infrastructure.
-          </p>
+        <section className="max-w-6xl mx-auto px-6 md:px-10 w-full pt-32 md:pt-40 pb-12">
+          <div className="max-w-3xl relative">
+            {/* Editorial margin line */}
+            <div className="absolute -left-6 md:-left-10 top-0 bottom-0 w-px bg-iroh-gray-800/60" />
+
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter leading-[0.9] text-meldrum-green-400">
+              Services
+            </h1>
+
+            <p className="mt-8 text-base md:text-lg text-meldrum-orange-400 max-w-xl leading-relaxed">
+              Meldrum Labs partners with a small number of companies to design, build, and harden real-time data infrastructure.
+            </p>
+          </div>
         </section>
 
-        <SectionDivider />
+        {/* Divider */}
+        <div className="max-w-6xl mx-auto px-6 md:px-10 w-full">
+          <div className="border-t border-iroh-gray-800/60" />
+        </div>
 
-        {/* Tiers */}
-        <section className="max-w-3xl mx-auto px-6 md:px-8 py-24">
+        {/* 01 — Capabilities */}
+        <section className="max-w-6xl mx-auto px-6 md:px-10 w-full py-24 md:py-32">
           <FadeInSection>
-            <span className="text-2xs uppercase tracking-[0.25em] text-iroh-gray-500 font-medium">
-              Engagements
-            </span>
+            <div className="max-w-3xl relative">
+              {/* Editorial margin line */}
+              <div className="absolute -left-6 md:-left-10 top-0 bottom-0 w-px bg-iroh-gray-800/60" />
+
+              <div className="mb-10 flex items-baseline gap-4">
+                <span className="text-sm font-medium text-iroh-gray-600 tabular-nums">01</span>
+                <h2 className="text-xl md:text-2xl font-bold text-meldrum-green-400 tracking-tight">
+                  Capabilities
+                </h2>
+              </div>
+
+              <FadeInSection delay={0.1}>
+                <p className="mt-12 text-lg md:text-xl text-meldrum-blue-300 leading-relaxed max-w-2xl">
+                  Meldrum Labs combines a background in research with hands-on experience building and running systems in production. We have deep expertise in the <span className="text-meldrum-pink-100 font-medium">Rust</span> ecosystem and a strong command of <span className="text-meldrum-pink-100 font-medium">distributed systems</span>, <span className="text-meldrum-pink-100 font-medium">stream processing</span>, and <span className="text-meldrum-pink-100 font-medium">database internals</span>.
+                </p>
+              </FadeInSection>
+            </div>
+          </FadeInSection>
+        </section>
+
+        {/* Divider */}
+        <div className="max-w-6xl mx-auto px-6 md:px-10 w-full">
+          <div className="border-t border-iroh-gray-800/60" />
+        </div>
+
+        {/* 02 — Engagements */}
+        <section className="max-w-6xl mx-auto px-6 md:px-10 w-full py-24 md:py-32">
+          <FadeInSection>
+            <div className="mb-10 flex items-baseline gap-4">
+              <span className="text-sm font-medium text-iroh-gray-600 tabular-nums">02</span>
+              <h2 className="text-xl md:text-2xl font-bold text-meldrum-green-400 tracking-tight">
+                Engagements
+              </h2>
+            </div>
           </FadeInSection>
 
           <FadeInSection delay={0.1}>
-            <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Advisory */}
-              <div className="group relative rounded-xl border border-iroh-gray-800 bg-iroh-gray-900/30 p-8 transition-all duration-500 hover:border-meldrum-green-500/20">
-                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 bg-gradient-to-br from-meldrum-green-500/[0.03] to-transparent transition-opacity duration-500" />
+              <div className="group relative rounded-xl border border-iroh-gray-800 border-t-meldrum-green-400/60 bg-iroh-gray-900/30 p-8 transition-all duration-500 hover:border-iroh-gray-700 hover:border-t-meldrum-green-400 hover:-translate-y-px">
                 <div className="relative z-10">
-                  <h2 className="text-2xl font-bold text-meldrum-green-400 tracking-tight">
-                    Advisory
-                  </h2>
-                  <p className="mt-4 text-sm text-iroh-gray-400 leading-relaxed">
-                    Strategic guidance for teams with execution capacity that need senior validation on architecture and design.
+                  <h3 className="text-2xl font-bold text-meldrum-orange-400 tracking-tight">
+                    Advisor
+                  </h3>
+                  <p className="mt-4 text-sm text-meldrum-blue-300 leading-relaxed">
+                    Independent review of internal systems and architecture guidance for new planned infrastructure.
                   </p>
-                  <ul className="mt-8 space-y-3">
-                    {[
-                      'Architecture & design reviews',
-                      'Performance & reliability audits',
-                      'Technology selection guidance',
-                      'Weekly or bi-weekly calls',
-                      'Written recommendations',
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-sm text-iroh-gray-300">
-                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-meldrum-green-400/50" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="mt-3 text-xs text-meldrum-pink-100 italic">
+                    For systems where getting it right the first time matters.
+                  </p>
+                  
                 </div>
               </div>
 
-              {/* Embedded Partner */}
-              <div className="group relative rounded-xl border border-iroh-gray-800 bg-iroh-gray-900/30 p-8 transition-all duration-500 hover:border-meldrum-green-500/20">
-                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 bg-gradient-to-br from-meldrum-green-500/[0.03] to-transparent transition-opacity duration-500" />
+              {/* Build partner */}
+              <div className="group relative rounded-xl border border-iroh-gray-800 border-t-meldrum-green-400/60 bg-iroh-gray-900/30 p-8 transition-all duration-500 hover:border-iroh-gray-700 hover:border-t-meldrum-green-400 hover:-translate-y-px">
                 <div className="relative z-10">
-                  <h2 className="text-2xl font-bold text-meldrum-green-400 tracking-tight">
-                    Embedded Partner
-                  </h2>
-                  <p className="mt-4 text-sm text-iroh-gray-400 leading-relaxed">
-                    Hands-on collaboration for teams building core infrastructure and needing senior ownership on critical systems.
+                  <h3 className="text-2xl font-bold text-meldrum-orange-400 tracking-tight">
+                    Build Partner
+                  </h3>
+                  <p className="mt-4 text-sm text-meldrum-blue-300 leading-relaxed">
+                    A selective, deep engagement for companies building core infrastructure where the stakes are high and ownership matters.
                   </p>
-                  <ul className="mt-8 space-y-3">
-                    {[
-                      'Hands-on architecture & development',
-                      'Code review & pair programming',
-                      'Production hardening',
-                      'On-call support during rollout',
-                      'Knowledge transfer',
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-sm text-iroh-gray-300">
-                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-meldrum-green-400/50" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="mt-3 text-xs text-meldrum-pink-100 italic">
+                    An extension of your team, not a vendor on the sidelines.
+                  </p>
+                  
                 </div>
               </div>
             </div>
           </FadeInSection>
 
           <FadeInSection delay={0.2}>
-            <p className="mt-14 text-iroh-gray-400 leading-relaxed text-sm">
-              Meldrum Labs only takes on a few selective partners to ensure quality and focus.
-            </p>
+            <div className="mt-14 text-center">
+              <p className="text-sm text-iroh-gray-400 leading-relaxed">
+                Meldrum Labs takes on a small number of partners at a time — Selective engagement. Undivided focus.
+              </p>
+            </div>
           </FadeInSection>
         </section>
 
-        <SectionDivider />
+        {/* Divider */}
+        <div className="max-w-6xl mx-auto px-6 md:px-10 w-full">
+          <div className="border-t border-iroh-gray-800/60" />
+        </div>
 
-        {/* Capabilities */}
-        <section className="max-w-3xl mx-auto px-6 md:px-8 py-24">
+        {/* 03 — Contact */}
+        <section className="max-w-6xl mx-auto px-6 md:px-10 w-full py-24 md:py-32 pb-32">
           <FadeInSection>
-            <span className="text-2xs uppercase tracking-[0.25em] text-iroh-gray-500 font-medium">
-              Capabilities
-            </span>
+            <div className="mb-10 flex items-baseline gap-4">
+              <span className="text-sm font-medium text-iroh-gray-600 tabular-nums">03</span>
+              <h2 className="text-xl md:text-2xl font-bold text-meldrum-green-400 tracking-tight">
+                Contact
+              </h2>
+            </div>
           </FadeInSection>
 
-          <div className="mt-12 space-y-6">
-            {[
-              {
-                label: 'Stream Processing',
-                terms: 'Apache Kafka · Apache Flink · Event-driven architecture · Backpressure & flow control',
-              },
-              {
-                label: 'Distributed Systems',
-                terms: 'Kubernetes · Rust · Production operations · Observability',
-              },
-              {
-                label: 'Storage & Query Engines',
-                terms: 'Apache Arrow · Apache DataFusion · µWheel · Embedded aggregations',
-              },
-              {
-                label: 'Deterministic Simulation Testing',
-                terms: 'Antithesis · FoundationDB-style testing · Fault injection · Chaos engineering',
-              },
-            ].map((domain) => (
-              <div key={domain.label} className="md:flex md:items-baseline md:gap-8">
-                <h3 className="text-2xs uppercase tracking-[0.25em] text-iroh-gray-500 font-medium shrink-0 w-56">
-                  {domain.label}
-                </h3>
-                <p className="mt-1 md:mt-0 text-base text-iroh-gray-300 leading-relaxed font-light">
-                  {domain.terms}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <SectionDivider />
-
-        {/* Contact */}
-        <section className="max-w-3xl mx-auto px-6 md:px-8 py-24 pb-32">
-          <FadeInSection>
-            <span className="text-2xs uppercase tracking-[0.25em] text-iroh-gray-500 font-medium">
-              Contact
-            </span>
-          </FadeInSection>
           <FadeInSection delay={0.1}>
-            <p className="mt-8 text-2xl md:text-3xl text-iroh-gray-300 leading-relaxed font-light max-w-xl">
-              If you are building something hard and need a build partner, let&apos;s talk.
+            <p className="mt-8 text-2xl md:text-3xl text-meldrum-blue-300 leading-relaxed font-light max-w-xl">
+              If you are building something that matters, let&apos;s talk.
             </p>
           </FadeInSection>
+
           <FadeInSection delay={0.2}>
             <div className="mt-12">
               <Link
                 href="mailto:contact@meldrumlabs.com"
-                className="group inline-flex items-center justify-center px-8 py-4 text-sm font-semibold text-iroh-gray-900 bg-meldrum-green-400 rounded-md hover:bg-meldrum-green-300 transition-all duration-300 hover:shadow-lg hover:shadow-meldrum-green-400/20"
+                className="group inline-flex items-center text-sm font-medium text-meldrum-pink-100 hover:text-meldrum-pink-200 transition-colors duration-300"
               >
-                Say hello
+                <span className="relative">
+                  Start a conversation
+                  <span className="absolute left-0 -bottom-1 w-full h-px bg-meldrum-pink-100/40 group-hover:bg-meldrum-pink-200/60 transition-colors duration-300" />
+                </span>
                 <svg
                   className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
+                  strokeWidth={1.5}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                 </svg>
               </Link>
             </div>

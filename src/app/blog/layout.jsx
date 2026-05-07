@@ -1,15 +1,10 @@
 'use client';
 
-import {usePathname} from 'next/navigation';
-
 import {SectionProvider} from '@/components/SectionProvider';
 
-export default function DocsLayout({children, sections = {}}) {
-  const pathname = usePathname();
-  sections = sections[pathname] || [];
-
+export default function BlogLayout({children}) {
   return (
-    <SectionProvider sections={sections}>
+    <SectionProvider sections={[]}>
       {children}
     </SectionProvider>
   );
