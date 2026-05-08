@@ -8,7 +8,7 @@ export const metadata = {
   metadataBase: new URL('https://www.meldrumlabs.com'),
   title: {
     template: '%s - Meldrum Labs',
-    default: 'about',
+    default: 'Meldrum Labs',
   },
   icons: {
     icon: [
@@ -20,12 +20,12 @@ export const metadata = {
   manifest: '/site.webmanifest',
   openGraph: {
     title: 'Meldrum Labs',
-    description: 'Observability for Builders. For engineers who build, ship, and get paged.',
+    description: 'Data Systems, Built with care.',
     images: [{
-      url: '/api/og?title=meldrum&subtitle=observability for builders',
+      url: '/api/og?title=meldrum&subtitle=data systems, built with care',
       width: 1200,
       height: 630,
-      alt: 'Observability for Builders',
+      alt: 'Data Systems, Built with care',
       type: 'image/png',
     }],
     type: 'website'
