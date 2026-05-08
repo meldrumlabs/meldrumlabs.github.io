@@ -5,9 +5,9 @@ import {BentoGrid} from '@/components/home/BentoGrid';
 import {FadeInSection} from '@/components/FadeInSection';
 import {HeroSection} from '@/components/home/HeroSection';
 export const metadata = {
-  title: 'Meldrum Labs',
+  title: 'Data Systems, Built with Care',
   description:
-    'Reliable by design. Performant by default.',
+    'Meldrum Labs builds reliable, performant data systems.',
 };
 
 export default function Page() {
