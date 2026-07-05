@@ -51,7 +51,7 @@ export function FooterMarketing() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm text-meldrum-orange-400 hover:text-meldrum-green-400 transition-colors"
+                      className="text-sm text-meldrum-blue-300 hover:text-meldrum-orange-400 transition-colors"
                     >
                       {item.name}
                     </Link>
@@ -69,7 +69,7 @@ export function FooterMarketing() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm text-meldrum-orange-400 hover:text-meldrum-green-400 transition-colors"
+                      className="text-sm text-meldrum-blue-300 hover:text-meldrum-orange-400 transition-colors"
                     >
                       {item.name}
                     </Link>
@@ -87,7 +87,7 @@ export function FooterMarketing() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm text-meldrum-orange-400 hover:text-meldrum-green-400 transition-colors"
+                      className="text-sm text-meldrum-blue-300 hover:text-meldrum-orange-400 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
