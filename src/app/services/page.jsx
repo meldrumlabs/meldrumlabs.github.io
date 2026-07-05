@@ -77,7 +77,7 @@ export default function Services() {
           <FadeInSection delay={0.1}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Advisory */}
-              <div className="group relative rounded-xl border border-iroh-gray-800 border-t-meldrum-green-400/60 bg-iroh-gray-900/30 p-8 transition-all duration-500 hover:border-iroh-gray-700 hover:border-t-meldrum-green-400 hover:-translate-y-px">
+              <div className="group relative rounded-xl p-8 transition-all duration-500 hover:-translate-y-px">
                 <div className="relative z-10">
                   <h3 className="text-2xl font-bold text-meldrum-orange-400 tracking-tight">
                     Advisor
@@ -88,12 +88,12 @@ export default function Services() {
                   <p className="mt-3 text-xs text-meldrum-pink-100 italic">
                     For systems where getting it right the first time matters.
                   </p>
-                  
+
                 </div>
               </div>
 
               {/* Build partner */}
-              <div className="group relative rounded-xl border border-iroh-gray-800 border-t-meldrum-green-400/60 bg-iroh-gray-900/30 p-8 transition-all duration-500 hover:border-iroh-gray-700 hover:border-t-meldrum-green-400 hover:-translate-y-px">
+              <div className="group relative rounded-xl p-8 transition-all duration-500 hover:-translate-y-px">
                 <div className="relative z-10">
                   <h3 className="text-2xl font-bold text-meldrum-orange-400 tracking-tight">
                     Build Partner
@@ -104,7 +104,7 @@ export default function Services() {
                   <p className="mt-3 text-xs text-meldrum-pink-100 italic">
                     An extension of your team, not a vendor on the sidelines.
                   </p>
-                  
+
                 </div>
               </div>
             </div>

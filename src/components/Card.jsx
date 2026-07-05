@@ -34,7 +34,7 @@ export function Card({ as, className, children }) {
 Card.Link = function CardLink({ children, ...props }) {
   return (
     <>
-      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded group-hover:shadow-lg group-hover:shadow-meldrum-green-500/5" />
+      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-iroh-gray-800/50 opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded group-hover:shadow-lg group-hover:shadow-meldrum-green-400/5" />
       <Link {...props}>
         <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
@@ -47,7 +47,7 @@ Card.Title = function CardTitle({ as, href, children }) {
   let Component = as ?? 'h2'
 
   return (
-    <Component className="text-2xl font-space tracking-tight text-meldrum-green-500 dark:text-meldrum-green-400">
+    <Component className="text-2xl font-space tracking-tight text-meldrum-green-400">
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
     </Component>
   )
@@ -86,7 +86,7 @@ Card.Eyebrow = function CardEyebrow({
     <Component
       className={clsx(
         className,
-        'relative z-10 order-first mb-3 flex items-center text-sm text-meldrum-orange-400 dark:text-meldrum-orange-500',
+        'relative z-10 order-first mb-3 flex items-center text-sm text-meldrum-orange-400',
         decorate && 'pl-3.5',
       )}
       {...props}
@@ -96,7 +96,7 @@ Card.Eyebrow = function CardEyebrow({
           className="absolute inset-y-0 left-0 flex items-center"
           aria-hidden="true"
         >
-          <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
+          <span className="h-4 w-0.5 rounded-full bg-iroh-gray-700" />
         </span>
       )}
       {children}
