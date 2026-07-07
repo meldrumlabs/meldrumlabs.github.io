@@ -55,7 +55,7 @@ Card.Title = function CardTitle({ as, href, children }) {
 
 Card.Description = function CardDescription({ children }) {
   return (
-    <p className="relative z-10 mt-2 text-sm text-meldrum-blue-600 dark:text-meldrum-blue-300">
+    <p className="relative z-10 mt-2 text-sm text-iroh-gray-600 dark:text-iroh-gray-400">
       {children}
     </p>
   )

@@ -83,7 +83,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 1.1, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="mt-10 md:mt-12"
           >
-            <p className="text-lg md:text-xl text-meldrum-blue-300 leading-relaxed max-w-xl">
+            <p className="text-lg md:text-xl text-iroh-gray-400 leading-relaxed max-w-xl">
               For companies who need a build partner that treats their stack like their own.
             </p>
 

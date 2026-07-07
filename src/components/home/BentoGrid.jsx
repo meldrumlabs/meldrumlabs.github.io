@@ -29,8 +29,8 @@ function MassiveSplitSection() {
             <h3 className="text-xl md:text-2xl font-bold text-meldrum-green-400 tracking-tight leading-snug">
               Modern Financial Data Infrastructure
             </h3>
-            <p className="mt-3 text-sm text-meldrum-blue-300 leading-relaxed">
-              Building real-time financial data infrastructure with <a href="https://massive.com" target="_blank" rel="noopener noreferrer" className="underline decoration-meldrum-blue-300/20 hover:decoration-meldrum-blue-300 transition-colors">Massive</a> — reliable, high-performance, built in Rust on Apache DataFusion and Arrow.
+            <p className="mt-3 text-sm text-iroh-gray-400 leading-relaxed">
+              Building real-time financial data infrastructure with <a href="https://massive.com" target="_blank" rel="noopener noreferrer" className="underline decoration-iroh-gray-400/20 hover:decoration-iroh-gray-400 transition-colors">Massive</a> — reliable, high-performance, built in Rust on Apache DataFusion and Arrow.
             </p>
           </div>
 
@@ -81,7 +81,7 @@ function EnyaSplitSection() {
               <h3 className="text-xl md:text-2xl font-bold text-meldrum-green-400 tracking-tight leading-snug">
                 Enya — A Builder&apos;s Best Friend
               </h3>
-              <p className="mt-3 text-sm text-meldrum-blue-300 leading-relaxed">
+              <p className="mt-3 text-sm text-iroh-gray-400 leading-relaxed">
                 An open-source toolkit for humans and AI agents. Observability, SQL, terminals, and code review — everything a builder needs in one place.
               </p>
 

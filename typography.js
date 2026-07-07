@@ -19,7 +19,7 @@ module.exports = ({ theme }) => ({
       '--tw-prose-th-borders': theme('colors.zinc.300'),
       '--tw-prose-td-borders': theme('colors.zinc.200'),
 
-      '--tw-prose-invert-body': theme('colors.meldrumBlue.300'),
+      '--tw-prose-invert-body': theme('colors.irohGray.400'),
       '--tw-prose-invert-headings': theme('colors.meldrumGreen.400'),
       '--tw-prose-invert-links': theme('colors.meldrumPink.100'),
       '--tw-prose-invert-links-hover': theme('colors.meldrumPink.500'),

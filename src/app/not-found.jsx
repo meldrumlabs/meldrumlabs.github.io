@@ -13,7 +13,7 @@ export default function NotFound() {
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-meldrum-green-400">
             Page not found
           </h1>
-          <p className="mt-3 text-base text-meldrum-blue-300 leading-relaxed">
+          <p className="mt-3 text-base text-iroh-gray-400 leading-relaxed">
             Sorry, we couldn&apos;t find the page you&apos;re looking for.
           </p>
           <div className="mt-8">

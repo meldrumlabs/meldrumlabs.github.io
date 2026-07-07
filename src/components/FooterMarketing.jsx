@@ -7,7 +7,6 @@ const navigation = {
     { name: 'GitHub', href: 'https://github.com/meldrumlabs' },
   ],
   company: [
-    { name: 'Team', href: '/team' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: 'mailto:contact@meldrumlabs.com' },
   ],
@@ -35,7 +34,7 @@ export function FooterMarketing() {
               />
               <span className="text-base font-semibold text-meldrum-green-400">Meldrum Labs</span>
             </div>
-            <p className="text-sm text-meldrum-blue-300 leading-relaxed">
+            <p className="text-sm text-iroh-gray-400 leading-relaxed">
               Data systems out of Sweden.
             </p>
           </div>
@@ -51,7 +50,7 @@ export function FooterMarketing() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm text-meldrum-blue-300 hover:text-meldrum-orange-400 transition-colors"
+                      className="text-sm text-iroh-gray-400 hover:text-meldrum-green-400 transition-colors"
                     >
                       {item.name}
                     </Link>
@@ -69,7 +68,7 @@ export function FooterMarketing() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm text-meldrum-blue-300 hover:text-meldrum-orange-400 transition-colors"
+                      className="text-sm text-iroh-gray-400 hover:text-meldrum-green-400 transition-colors"
                     >
                       {item.name}
                     </Link>
@@ -87,7 +86,7 @@ export function FooterMarketing() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm text-meldrum-blue-300 hover:text-meldrum-orange-400 transition-colors"
+                      className="text-sm text-iroh-gray-400 hover:text-meldrum-green-400 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

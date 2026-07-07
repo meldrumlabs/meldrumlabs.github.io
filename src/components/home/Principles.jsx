@@ -47,7 +47,7 @@ export function Principles() {
               <h3 className="mt-3 text-lg font-semibold text-meldrum-green-400">
                 {p.title}
               </h3>
-              <p className="mt-2 text-sm text-meldrum-blue-300 leading-relaxed">
+              <p className="mt-2 text-sm text-iroh-gray-400 leading-relaxed">
                 {p.body}
               </p>
             </motion.div>

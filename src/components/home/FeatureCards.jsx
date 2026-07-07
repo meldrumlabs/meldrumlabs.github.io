@@ -98,7 +98,7 @@ function FeatureCard({ feature, index }) {
             </h3>
 
             {/* Description */}
-            <p className="text-meldrum-blue-300 text-sm leading-relaxed mb-4">
+            <p className="text-iroh-gray-400 text-sm leading-relaxed mb-4">
               {feature.description}
             </p>
 

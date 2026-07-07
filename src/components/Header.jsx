@@ -17,7 +17,6 @@ import {ThemeToggle} from '@/components/ThemeToggle';
 
 export const navItems = [
   {content: 'Services', href: '/services'},
-  {content: 'Team', href: '/team'},
   {content: 'Blog', href: '/blog'},
 ];
 

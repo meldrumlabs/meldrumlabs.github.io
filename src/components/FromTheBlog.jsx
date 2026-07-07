@@ -43,7 +43,7 @@ export async function FromTheBlog() {
                 <h3 className="text-lg font-semibold text-meldrum-green-400 group-hover:text-meldrum-green-300 transition-colors">
                   {post.title}
                 </h3>
-                <p className="mt-1 text-sm text-meldrum-blue-300 leading-relaxed max-w-2xl">
+                <p className="mt-1 text-sm text-iroh-gray-400 leading-relaxed max-w-2xl">
                   {post.description}
                 </p>
               </div>
