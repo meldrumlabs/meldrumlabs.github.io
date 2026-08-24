@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import Link from 'next/link'
 
 function MassiveSplitSection() {
   return (
@@ -55,65 +54,6 @@ function MassiveSplitSection() {
   )
 }
 
-function EnyaSplitSection() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.15 }}
-    >
-      <Link href="/blog/enya" className="block">
-        <div className="group relative rounded-xl border border-iroh-gray-800 transition-all duration-300 hover:border-iroh-gray-700 hover:-translate-y-px overflow-hidden">
-          <div className="relative md:grid md:grid-cols-2">
-            {/* Left: narrative */}
-            <div className="p-8 md:p-10 flex flex-col">
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-2xs uppercase tracking-[0.2em] text-iroh-gray-500 font-medium">Open-source</span>
-                <Image
-                  src="/images/enya.png"
-                  alt="Enya"
-                  width={24}
-                  height={24}
-                  className="object-contain opacity-40 group-hover:opacity-70 transition-opacity duration-300"
-                />
-              </div>
-
-              <h3 className="text-xl md:text-2xl font-bold text-meldrum-green-400 tracking-tight leading-snug">
-                Enya — A Builder&apos;s Best Friend
-              </h3>
-              <p className="mt-3 text-sm text-iroh-gray-400 leading-relaxed">
-                An open-source toolkit for humans and AI agents. Observability, SQL, terminals, and code review — everything a builder needs in one place.
-              </p>
-
-              <div className="mt-auto pt-5 flex items-center text-sm text-meldrum-pink-100 transition-colors">
-                Learn more
-                <svg className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
-            </div>
-
-            {/* Right: video */}
-            <div className="p-6 md:p-8 md:border-l border-t md:border-t-0 border-iroh-gray-800 flex items-center">
-              <div className="relative rounded-lg overflow-hidden border border-iroh-gray-800 w-full">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-auto"
-                >
-                  <source src="/videos/landing.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Link>
-    </motion.div>
-  )
-}
-
 export function BentoGrid() {
   return (
     <div>
@@ -126,7 +66,6 @@ export function BentoGrid() {
 
       <div className="space-y-6">
         <MassiveSplitSection />
-        <EnyaSplitSection />
       </div>
     </div>
   )

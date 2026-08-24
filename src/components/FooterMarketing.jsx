@@ -3,7 +3,6 @@ import Link from 'next/link'
 
 const navigation = {
   openSource: [
-    { name: 'Enya', href: '/blog/enya' },
     { name: 'GitHub', href: 'https://github.com/meldrumlabs' },
   ],
   company: [
