@@ -22,6 +22,14 @@ npm run dev
 
 Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
+## Favicons
+
+Edit `public/favicon.svg` (orange symbol, transparent background), then run
+`node scripts/generate-favicons.mjs` to regenerate and check the PNG/ICO assets.
+Apple touch icons retain an opaque charcoal background for iOS.
+The generator uses Sharp, already installed with Next.js. Keep the icon URLs
+stable; Google refreshes its cached favicon after recrawling the deployed site.
+
 ## Editing docs content
 
 Our docs are generated. Use the following steps to make adjustments to the content and update the website to match:
