@@ -23,15 +23,14 @@ export function FooterMarketing() {
         <div className="md:flex md:justify-between md:gap-8">
           {/* Brand */}
           <div className="space-y-4 md:max-w-xs">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center">
               <Image
-                src="/android-chrome-192x192.png"
-                alt=""
-                width={32}
+                src="/img/logo/wordmark.svg"
+                alt="Meldrum Labs"
+                width={166}
                 height={32}
-                className="h-8 w-8"
+                className="h-8 w-auto"
               />
-              <span className="text-base font-semibold text-meldrum-green-400">Meldrum Labs</span>
             </div>
             <p className="text-sm text-iroh-gray-400 leading-relaxed">
               Data systems out of Sweden.
