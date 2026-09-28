@@ -24,7 +24,7 @@ export const metadata = {
     title: 'Meldrum Labs',
     description: 'Data Systems, Built with care.',
     images: [{
-      url: '/api/og?title=meldrum&subtitle=data systems, built with care',
+      url: '/images/og.png',
       width: 1200,
       height: 630,
       alt: 'Data Systems, Built with care',
