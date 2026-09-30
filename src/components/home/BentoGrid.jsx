@@ -21,7 +21,7 @@ function MassiveSplitSection() {
                 alt="Massive"
                 width={90}
                 height={24}
-                className="object-contain opacity-30 group-hover:opacity-60 transition-opacity duration-300"
+                className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
               />
             </div>
 
@@ -35,7 +35,7 @@ function MassiveSplitSection() {
 
           {/* Right: Testimonial */}
           <div className="p-8 md:p-10 md:border-l border-t md:border-t-0 border-iroh-gray-800 flex flex-col justify-center">
-            <span className="text-4xl leading-none text-meldrum-orange-400/40 -mb-2 select-none">
+            <span className="text-5xl leading-none text-meldrum-orange-400/60 -mb-2 select-none">
               &ldquo;
             </span>
             <blockquote className="text-base md:text-lg text-iroh-gray-300 leading-relaxed">

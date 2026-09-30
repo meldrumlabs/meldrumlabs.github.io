@@ -10,7 +10,7 @@ const navigation = {
     { name: 'Contact', href: 'mailto:contact@meldrumlabs.com' },
   ],
   socials: [
-    { name: 'LinkedIn', href: 'https://linkedin.com/company/meldrumlabs' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/meldrum-labs' },
     { name: 'X', href: 'https://x.com/meldrumlabs' },
   ],
 }

@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useReducedMotion } from 'framer-motion'
 
 export function FadeInSection({
   children,
@@ -11,6 +11,7 @@ export function FadeInSection({
 }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-80px" })
+  const shouldReduceMotion = useReducedMotion()
 
   const directions = {
     up: { y: 40, x: 0 },
@@ -19,7 +20,7 @@ export function FadeInSection({
     right: { y: 0, x: -40 },
   }
 
-  const { x, y } = directions[direction] || directions.up
+  const { x, y } = shouldReduceMotion ? { x: 0, y: 0 } : (directions[direction] || directions.up)
 
   return (
     <motion.div
@@ -28,7 +29,7 @@ export function FadeInSection({
       initial={{ opacity: 0, y, x }}
       animate={isInView ? { opacity: 1, y: 0, x: 0 } : { opacity: 0, y, x }}
       transition={{
-        duration: 0.7,
+        duration: shouldReduceMotion ? 0 : 0.7,
         delay,
         ease: [0.21, 0.47, 0.32, 0.98] // custom easing for smooth feel
       }}

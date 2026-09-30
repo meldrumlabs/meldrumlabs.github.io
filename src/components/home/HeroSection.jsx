@@ -1,9 +1,14 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
 function AnimatedLine({ text, className, baseDelay = 0 }) {
+  const shouldReduceMotion = useReducedMotion()
   const characters = text.split('')
+
+  if (shouldReduceMotion) {
+    return <span className={`inline-block ${className}`}>{text}</span>
+  }
 
   const container = {
     hidden: { opacity: 0 },
@@ -80,12 +85,13 @@ export function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+            transition={{ duration: 0.6, delay: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="mt-10 md:mt-12"
           >
             <p className="text-lg md:text-xl text-iroh-gray-400 leading-relaxed max-w-xl">
               For companies who need a build partner that treats their stack like their own.
             </p>
+
 
             <div className="mt-10">
               <Link

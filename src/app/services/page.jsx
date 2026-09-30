@@ -32,7 +32,7 @@ export default function Services() {
 
         {/* Divider */}
         <div className="max-w-6xl mx-auto px-6 md:px-10 w-full">
-          <div className="bg-gradient-to-r from-transparent via-iroh-gray-800/60 to-transparent h-px" />
+          <div className="border-t border-iroh-gray-800/60" />
         </div>
 
         {/* 01 — Capabilities */}
@@ -60,7 +60,7 @@ export default function Services() {
 
         {/* Divider */}
         <div className="max-w-6xl mx-auto px-6 md:px-10 w-full">
-          <div className="bg-gradient-to-r from-transparent via-iroh-gray-800/60 to-transparent h-px" />
+          <div className="border-t border-iroh-gray-800/60" />
         </div>
 
         {/* 02 — Engagements */}
@@ -69,7 +69,7 @@ export default function Services() {
             <div className="max-w-3xl">
               <div className="mb-6 flex items-baseline gap-4">
                 <span className="text-sm font-medium text-iroh-gray-600 tabular-nums font-spaceMono">02</span>
-                <h2 className="text-3xl md:text-4xl font-bold text-meldrum-green-400 tracking-tight">
+                <h2 className="text-xl md:text-2xl font-bold text-meldrum-green-400 tracking-tight">
                   How we work
                 </h2>
               </div>
@@ -90,7 +90,7 @@ export default function Services() {
 
         {/* Divider */}
         <div className="max-w-6xl mx-auto px-6 md:px-10 w-full">
-          <div className="bg-gradient-to-r from-transparent via-iroh-gray-800/60 to-transparent h-px" />
+          <div className="border-t border-iroh-gray-800/60" />
         </div>
 
         {/* 03 — The Lab */}
@@ -134,7 +134,7 @@ export default function Services() {
 
         {/* Divider */}
         <div className="max-w-6xl mx-auto px-6 md:px-10 w-full">
-          <div className="bg-gradient-to-r from-transparent via-iroh-gray-800/60 to-transparent h-px" />
+          <div className="border-t border-iroh-gray-800/60" />
         </div>
 
         {/* 04 — Contact */}

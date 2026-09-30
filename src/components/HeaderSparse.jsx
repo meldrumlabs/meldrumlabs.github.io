@@ -3,15 +3,63 @@
 import React, {useState, useEffect } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
+import {Popover, PopoverButton, PopoverPanel} from '@headlessui/react';
 import {navItems} from '@/components/Header';
 import {Logotype} from '@/components/Logotype';
+
+const contactOptions = [
+  {name: 'Email', detail: 'contact@meldrumlabs.com', href: 'mailto:contact@meldrumlabs.com'},
+  {name: 'X', detail: '@meldruum', href: 'https://x.com/meldruum'},
+  {name: 'LinkedIn', detail: 'Meldrum Labs', href: 'https://www.linkedin.com/company/meldrum-labs'},
+];
+
+function ContactPopover() {
+  return (
+    <Popover className="relative">
+      <PopoverButton className="group flex items-center text-meldrum-green-400 px-3 py-2 rounded-md text-sm font-medium leading-6 transition-colors hover:text-meldrum-green-100 outline-none">
+        <span className="flex items-center gap-1">
+          Contact
+          <svg
+            className="w-3.5 h-3.5 text-iroh-gray-500 transition-transform duration-200 group-data-[open]:rotate-180"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </span>
+      </PopoverButton>
+      <PopoverPanel
+        anchor="bottom end"
+        transition
+        className="mt-2 w-72 rounded-lg border border-iroh-gray-800 bg-iroh-gray-900/95 backdrop-blur-md shadow-xl transition duration-200 ease-out data-[closed]:opacity-0 data-[closed]:translate-y-1"
+      >
+        <div className="p-2">
+          {contactOptions.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              target={item.href.startsWith('mailto') ? undefined : '_blank'}
+              rel="noopener noreferrer"
+              className="flex items-center justify-between gap-6 rounded-md px-4 py-3 transition-colors hover:bg-iroh-gray-800"
+            >
+              <span className="text-sm font-medium text-iroh-gray-200">{item.name}</span>
+              <span className="text-xs text-iroh-gray-500 whitespace-nowrap">{item.detail}</span>
+            </a>
+          ))}
+        </div>
+      </PopoverPanel>
+    </Popover>
+  );
+}
 
 function TopLevelNavItem({ href, children }) {
   return (
     <li>
       <Link
         href={href}
-        className="text-meldrum-green-400 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:text-meldrum-green-100"
+        className="flex items-center text-meldrum-green-400 px-3 py-2 rounded-md text-sm font-medium leading-6 transition-colors hover:text-meldrum-green-100"
       >
         {children}
       </Link>
@@ -66,11 +114,14 @@ export function HeaderSparse() {
               <Logotype className="h-6" />
             </Link>
 
-            <div className="hidden inset-y-0 sm:flex sm:items-center sm:pr-0 sm:inset-auto gap-6">
-              <ul className="flex space-x-5">
+            <div className="hidden inset-y-0 sm:flex sm:items-center sm:pr-0 sm:inset-auto">
+              <ul className="flex items-center space-x-5">
                 {navItems.map((item, i ) => (
                   <TopLevelNavItem key={i} href={item.href}>{item.content}</TopLevelNavItem>
                 ))}
+                <li>
+                  <ContactPopover />
+                </li>
               </ul>
             </div>
           </div>
@@ -95,6 +146,12 @@ export function HeaderSparse() {
               {item.content}
             </Link>
           ))}
+          <Link
+            href="mailto:contact@meldrumlabs.com"
+            className="block px-3 py-2 rounded-md text-base font-medium text-meldrum-green-400 hover:text-meldrum-green-100 hover:bg-iroh-gray-800 transition-colors"
+          >
+            Contact
+          </Link>
         </div>
       </div>
     </nav>
