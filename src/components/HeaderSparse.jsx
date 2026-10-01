@@ -33,7 +33,7 @@ function ContactPopover() {
       <PopoverPanel
         anchor="bottom end"
         transition
-        className="mt-2 w-72 rounded-lg border border-iroh-gray-800 bg-iroh-gray-900/95 backdrop-blur-md shadow-xl transition duration-200 ease-out data-[closed]:opacity-0 data-[closed]:translate-y-1"
+        className="mt-2 w-72 rounded-lg border border-iroh-gray-800/50 bg-iroh-gray-900 shadow-xl transition duration-200 ease-out data-[closed]:opacity-0 data-[closed]:translate-y-1"
       >
         <div className="p-2">
           {contactOptions.map((item) => (
@@ -141,17 +141,28 @@ export function HeaderSparse() {
             <Link
               key={i}
               href={item.href}
-              className="block px-3 py-2 rounded-md text-base font-medium text-iroh-gray-300 hover:text-white hover:bg-iroh-gray-800 transition-colors"
+              className="block px-3 py-2 rounded-md text-base font-medium text-meldrum-green-400 hover:text-meldrum-green-100 hover:bg-iroh-gray-800 transition-colors"
             >
               {item.content}
             </Link>
           ))}
-          <Link
-            href="mailto:contact@meldrumlabs.com"
-            className="block px-3 py-2 rounded-md text-base font-medium text-meldrum-green-400 hover:text-meldrum-green-100 hover:bg-iroh-gray-800 transition-colors"
-          >
-            Contact
-          </Link>
+          <div className="pt-2 mt-2 border-t border-iroh-gray-800/50">
+            <p className="px-3 pb-1 text-xs uppercase tracking-wider text-iroh-gray-500">
+              Contact
+            </p>
+            {contactOptions.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                target={item.href.startsWith('mailto') ? undefined : '_blank'}
+                rel="noopener noreferrer"
+                className="flex items-center justify-between gap-6 px-3 py-2 rounded-md text-base font-medium text-meldrum-green-400 hover:text-meldrum-green-100 hover:bg-iroh-gray-800 transition-colors"
+              >
+                <span>{item.name}</span>
+                <span className="text-xs text-iroh-gray-500 whitespace-nowrap">{item.detail}</span>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </nav>
