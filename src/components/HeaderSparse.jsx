@@ -16,11 +16,11 @@ const contactOptions = [
 function ContactPopover() {
   return (
     <Popover className="relative">
-      <PopoverButton className="group flex items-center text-meldrum-green-400 px-3 py-2 rounded-md text-sm font-medium leading-6 transition-colors hover:text-meldrum-green-100 outline-none">
+      <PopoverButton className="group flex items-center text-[var(--page-heading)] px-3 py-2 rounded-md text-sm font-medium leading-6 transition-colors hover:text-[var(--page-ink)] outline-none">
         <span className="flex items-center gap-1">
           Contact
           <svg
-            className="w-3.5 h-3.5 text-iroh-gray-500 transition-transform duration-200 group-data-[open]:rotate-180"
+            className="w-3.5 h-3.5 text-[var(--page-muted)] transition-transform duration-200 group-data-[open]:rotate-180"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -33,7 +33,7 @@ function ContactPopover() {
       <PopoverPanel
         anchor="bottom end"
         transition
-        className="mt-2 w-72 rounded-lg border border-iroh-gray-800/50 bg-iroh-gray-900 shadow-xl transition duration-200 ease-out data-[closed]:opacity-0 data-[closed]:translate-y-1"
+        className="mt-2 w-72 rounded-lg border border-[var(--page-rule)] bg-[var(--page-panel)] shadow-xl transition duration-200 ease-out data-[closed]:opacity-0 data-[closed]:translate-y-1"
       >
         <div className="p-2">
           {contactOptions.map((item) => (
@@ -42,10 +42,10 @@ function ContactPopover() {
               href={item.href}
               target={item.href.startsWith('mailto') ? undefined : '_blank'}
               rel="noopener noreferrer"
-              className="flex items-center justify-between gap-6 rounded-md px-4 py-3 transition-colors hover:bg-iroh-gray-800"
+              className="flex items-center justify-between gap-6 rounded-md px-4 py-3 transition-colors hover:bg-[var(--page-rule)]"
             >
-              <span className="text-sm font-medium text-iroh-gray-200">{item.name}</span>
-              <span className="text-xs text-iroh-gray-500 whitespace-nowrap">{item.detail}</span>
+              <span className="text-sm font-medium text-[var(--page-ink)]">{item.name}</span>
+              <span className="text-xs text-[var(--page-muted)] whitespace-nowrap">{item.detail}</span>
             </a>
           ))}
         </div>
@@ -59,7 +59,7 @@ function TopLevelNavItem({ href, children }) {
     <li>
       <Link
         href={href}
-        className="flex items-center text-meldrum-green-400 px-3 py-2 rounded-md text-sm font-medium leading-6 transition-colors hover:text-meldrum-green-100"
+        className="flex items-center text-[var(--page-heading)] px-3 py-2 rounded-md text-sm font-medium leading-6 transition-colors hover:text-[var(--page-ink)]"
       >
         {children}
       </Link>
@@ -67,7 +67,7 @@ function TopLevelNavItem({ href, children }) {
   );
 }
 
-export function HeaderSparse() {
+export function HeaderSparse({ revealLogoOnScroll = false }) {
   let [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   let [scrolled, setScrolled] = useState(false);
 
@@ -89,7 +89,7 @@ export function HeaderSparse() {
       className={clsx(
         "fixed w-full z-50 transition-all duration-300",
         scrolled
-          ? "bg-iroh-gray-900/80 backdrop-blur-md border-b border-iroh-gray-800/50"
+          ? "bg-[var(--page-nav)] backdrop-blur-md border-b border-[var(--page-rule)]"
           : "bg-transparent border-b border-transparent"
       )}
     >
@@ -99,7 +99,7 @@ export function HeaderSparse() {
             <button
               type="button"
               onClick={toggleMobileMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-iroh-gray-400 hover:text-white hover:bg-iroh-gray-800 transition-colors"
+              className="inline-flex items-center justify-center p-2 rounded-md text-[var(--page-muted)] hover:text-[var(--page-ink)] hover:bg-[var(--page-rule)] transition-colors"
               aria-controls="mobile-menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -110,7 +110,15 @@ export function HeaderSparse() {
             </button>
           </div>
           <div className="flex-1 flex sm:items-stretch sm:justify-start">
-            <Link href="/" className="block shrink-0 flex items-center mr-auto">
+            <Link
+              href="/"
+              className={clsx(
+                'block shrink-0 flex items-center mr-auto transition-opacity duration-500',
+                revealLogoOnScroll && !scrolled ? 'opacity-0' : 'opacity-100',
+              )}
+              aria-hidden={revealLogoOnScroll && !scrolled ? 'true' : undefined}
+              tabIndex={revealLogoOnScroll && !scrolled ? -1 : undefined}
+            >
               <Logotype className="h-6" />
             </Link>
 
@@ -136,18 +144,18 @@ export function HeaderSparse() {
           mobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         )}
       >
-        <div className="px-4 pt-2 pb-4 space-y-1 bg-iroh-gray-900/95 backdrop-blur-md border-b border-iroh-gray-800/50">
+        <div className="px-4 pt-2 pb-4 space-y-1 bg-[var(--page-nav)] backdrop-blur-md border-b border-[var(--page-rule)]">
           {navItems.map((item, i ) => (
             <Link
               key={i}
               href={item.href}
-              className="block px-3 py-2 rounded-md text-base font-medium text-meldrum-green-400 hover:text-meldrum-green-100 hover:bg-iroh-gray-800 transition-colors"
+              className="block px-3 py-2 rounded-md text-base font-medium text-[var(--page-heading)] hover:text-[var(--page-ink)] hover:bg-[var(--page-rule)] transition-colors"
             >
               {item.content}
             </Link>
           ))}
-          <div className="pt-2 mt-2 border-t border-iroh-gray-800/50">
-            <p className="px-3 pb-1 text-xs uppercase tracking-wider text-iroh-gray-500">
+          <div className="pt-2 mt-2 border-t border-[var(--page-rule)]">
+            <p className="px-3 pb-1 text-xs uppercase tracking-wider text-[var(--page-muted)]">
               Contact
             </p>
             {contactOptions.map((item) => (
@@ -156,10 +164,10 @@ export function HeaderSparse() {
                 href={item.href}
                 target={item.href.startsWith('mailto') ? undefined : '_blank'}
                 rel="noopener noreferrer"
-                className="flex items-center justify-between gap-6 px-3 py-2 rounded-md text-base font-medium text-meldrum-green-400 hover:text-meldrum-green-100 hover:bg-iroh-gray-800 transition-colors"
+                className="flex items-center justify-between gap-6 px-3 py-2 rounded-md text-base font-medium text-[var(--page-heading)] hover:text-[var(--page-ink)] hover:bg-[var(--page-rule)] transition-colors"
               >
                 <span>{item.name}</span>
-                <span className="text-xs text-iroh-gray-500 whitespace-nowrap">{item.detail}</span>
+                <span className="text-xs text-[var(--page-muted)] whitespace-nowrap">{item.detail}</span>
               </a>
             ))}
           </div>

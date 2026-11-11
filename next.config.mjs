@@ -25,6 +25,14 @@ const nextConfig = {
   output: 'export', // Explicitly set for static export
   images: { unoptimized: true },
   redirects,
+  webpack(config) {
+    // vgpu's loader prepares .wgsl imports at build time so the browser never
+    // ships a WGSL parser.
+    config.module ??= {}
+    config.module.rules ??= []
+    config.module.rules.push({ test: /\.wgsl$/, loader: '@vgpu/wgsl/loader-webpack' })
+    return config
+  },
 }
 
 export default withSearch(withMDX(nextConfig))

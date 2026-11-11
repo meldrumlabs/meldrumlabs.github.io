@@ -1,120 +1,25 @@
-'use client'
+import { HeroParticles } from '@/components/home/HeroParticles'
 
-import { motion, useReducedMotion } from 'framer-motion'
-import Link from 'next/link'
-function AnimatedLine({ text, className, baseDelay = 0 }) {
-  const shouldReduceMotion = useReducedMotion()
-  const characters = text.split('')
-
-  if (shouldReduceMotion) {
-    return <span className={`inline-block ${className}`}>{text}</span>
-  }
-
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.025,
-        delayChildren: baseDelay,
-      },
-    },
-  }
-
-  const child = {
-    hidden: { opacity: 0, y: 12 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.35,
-        ease: [0.21, 0.47, 0.32, 0.98],
-      },
-    },
-  }
-
-  return (
-    <motion.span
-      className={`inline-block ${className}`}
-      variants={container}
-      initial="hidden"
-      animate="visible"
-      aria-label={text}
-    >
-      {characters.map((char, index) => (
-        <motion.span
-          key={index}
-          variants={child}
-          className="inline-block"
-          style={{ whiteSpace: char === ' ' ? 'pre' : undefined }}
-        >
-          {char}
-        </motion.span>
-      ))}
-    </motion.span>
-  )
-}
-
+/**
+ * The landing page: the particle mark and the wordmark as one lockup, filling
+ * the screen.
+ *
+ * The lockup's font size sets the mark and the wordmark is sized relative to it
+ * (1.08em), so the two keep their proportions at every width. The mark is 2.92em
+ * wide against a 1.85em-tall cap, matching the brand's own wordmark file.
+ */
 export function HeroSection() {
   return (
-    <section className="relative min-h-[70vh] flex items-center">
-      {/* Flat, pure dark background */}
-      <div className="absolute inset-0 bg-iroh-gray-900" />
-
-      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 w-full">
-        <div className="max-w-3xl relative">
-          {/* Editorial margin line */}
-          <div className="absolute -left-6 md:-left-10 top-0 bottom-0 w-px bg-iroh-gray-800/60" />
-
-          {/* Headline — staggered character animation */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter leading-[0.9]">
-            <AnimatedLine
-              text="Data systems,"
-              className="text-meldrum-green-400"
-              baseDelay={0.15}
-            />
-            <br />
-            <AnimatedLine
-              text="built with care."
-              className="text-meldrum-orange-400"
-              baseDelay={0.6}
-            />
+    <section className="relative flex w-full flex-1 flex-col items-center justify-center overflow-hidden">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-16 pt-32 text-center md:px-10">
+        <div
+          className="flex animate-rise items-center justify-center gap-[0.45em] motion-reduce:animate-none"
+          style={{ fontSize: 'clamp(1.6rem, 8.2vw, 5.25rem)' }}
+        >
+          <HeroParticles className="w-[2.92em] shrink-0" />
+          <h1 className="whitespace-nowrap font-space font-semibold text-[1.08em] tracking-[-0.03em] text-[var(--page-heading)]">
+            Meldrum Labs
           </h1>
-
-          {/* Subheadline + CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="mt-10 md:mt-12"
-          >
-            <p className="text-lg md:text-xl text-iroh-gray-400 leading-relaxed max-w-xl">
-              For companies who need a build partner that treats their stack like their own.
-            </p>
-
-
-            <div className="mt-10">
-              <Link
-                href="/services"
-                className="group inline-flex items-center text-sm font-medium text-meldrum-pink-100 hover:text-meldrum-pink-200 transition-colors duration-300"
-              >
-                <span className="relative">
-                  How we work
-                  <span className="absolute left-0 -bottom-1 w-full h-px bg-meldrum-pink-100/40 group-hover:bg-meldrum-pink-200/60 transition-colors duration-300" />
-                </span>
-                <svg
-                  className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                </svg>
-              </Link>
-            </div>
-          </motion.div>
-
         </div>
       </div>
     </section>

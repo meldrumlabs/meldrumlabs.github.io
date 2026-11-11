@@ -45,14 +45,14 @@ export default async function ArticlesIndex() {
   let posts = await getAllPosts()
 
   return (
-    <div className="relative bg-iroh-gray-900 text-iroh-gray-100 font-space">
+    <div className="relative font-space text-[var(--page-ink)]">
       <BlogHeader />
       <div className='my-20 mx-auto max-w-2xl min-h-screen lg:mt-32 px-6 md:px-10'>
         <header className="max-w-2xl">
-          <h1 className="text-4xl font-space font-bold tracking-tight text-meldrum-green-400 sm:text-4xl">Blog</h1>
-          <p className="mt-6 text-base text-meldrum-orange-400">Everything Meldrum Labs Related</p>
+          <h1 className="text-4xl font-space font-bold tracking-tight text-[var(--page-heading)] sm:text-4xl">Blog</h1>
+          <p className="mt-6 text-base text-[var(--page-accent)]">Everything Meldrum Labs Related</p>
         </header>
-        <div className="mt-20 md:border-l md:border-iroh-gray-800/60 md:pl-6">
+        <div className="mt-20 md:border-l md:border-[var(--page-rule)] md:pl-6">
           <div className="flex max-w-3xl flex-col space-y-16">
             {posts.map((post) => (
               <Article key={post.slug} post={post} />

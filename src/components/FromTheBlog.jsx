@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { getAllPosts } from '@/lib/blog'
 import { formatDate } from '@/lib/formatDate'
 
-export async function FromTheBlog() {
+export async function FromTheBlog({ index = '04' }) {
   let posts = await getAllPosts()
   posts = posts.slice(0, 2)
 
@@ -10,7 +10,7 @@ export async function FromTheBlog() {
     <div>
       <div className="flex items-baseline justify-between mb-10">
         <div className="flex items-baseline gap-4">
-          <span className="text-sm font-medium text-iroh-gray-600 tabular-nums">02</span>
+          <span className="text-sm font-medium text-iroh-gray-600 tabular-nums">{index}</span>
           <h2 className="text-xl md:text-2xl font-bold text-meldrum-green-400 tracking-tight">
             From the blog
           </h2>
