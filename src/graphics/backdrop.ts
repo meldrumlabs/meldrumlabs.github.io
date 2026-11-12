@@ -1,15 +1,17 @@
-// The landing page's background: warm stock with a slow wash of gold, a breath
-// of rose and sage, light from above, and a soft pool of warmth that follows
-// the pointer. One fullscreen pass at reduced resolution — it is all low
-// frequency, so the extra detail would never be seen.
+// The landing page's background: linen — a woven stock with two scales of
+// mottling, light from the top left, and a soft pool of warmth that follows the
+// pointer. One fullscreen pass at reduced resolution — it is all low frequency
+// except the weave, which is why the weave is measured in device pixels.
 
 import { clock, effect, frame, frameLoop, init, surface } from 'vgpu'
 import type { Frame, FrameLoopHandle } from 'vgpu'
-import pearlShader from './pearl.wgsl'
+import linenShader from './linen.wgsl'
 
 export interface BackdropOptions {
   /** Reduced motion: render one still frame and stop. */
   still?: boolean
+  /** Any of the paper shaders — they share the same uniform block. */
+  shader?: typeof linenShader
 }
 
 const PAPER = [0.988, 0.984, 0.969, 1]
@@ -17,7 +19,7 @@ const PAPER = [0.988, 0.984, 0.969, 1]
 /** Starts the field on `canvas`; call the returned function to tear it down. */
 export async function startBackdrop(
   canvas: HTMLCanvasElement,
-  { still = false }: BackdropOptions = {},
+  { still = false, shader = linenShader }: BackdropOptions = {},
 ): Promise<() => void> {
   const gpu = await init()
   const view = surface(gpu, canvas, { dpr: [0.5, 1], clearColor: PAPER, label: 'hero-backdrop' })
@@ -33,7 +35,7 @@ export async function startBackdrop(
   }
   if (warm) window.addEventListener('pointermove', onMove, { passive: true })
 
-  const field = effect(gpu, pearlShader, {
+  const field = effect(gpu, shader, {
     label: 'hero-backdrop',
     set: {
       params: {

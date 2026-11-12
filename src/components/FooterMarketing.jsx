@@ -6,9 +6,9 @@ const navigation = {
     { name: 'GitHub', href: 'https://github.com/meldrumlabs' },
   ],
   company: [
-    { name: 'Work', href: '/#work' },
-    { name: 'The Lab', href: '/#lab' },
     { name: 'Services', href: '/services' },
+    { name: 'Products', href: '/products' },
+    { name: 'The Lab', href: '/services#lab' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: 'mailto:contact@meldrumlabs.com' },
   ],

@@ -230,7 +230,7 @@
   }
 
   *:focus-visible {
-    outline: 2px solid rgba(152, 151, 26, 0.5);
+    outline: 2px solid color-mix(in oklab, var(--page-accent) 60%, transparent);
     outline-offset: 2px;
     border-radius: 4px;
   }

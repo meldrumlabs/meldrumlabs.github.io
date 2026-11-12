@@ -1,25 +1,74 @@
+import Link from 'next/link'
+
 import { HeroParticles } from '@/components/home/HeroParticles'
 
 /**
- * The landing page: the particle mark and the wordmark as one lockup, filling
- * the screen.
+ * The landing page: the particle mark and the wordmark as one lockup, a single
+ * line under it saying what the company does, and two ways in.
  *
  * The lockup's font size sets the mark and the wordmark is sized relative to it
  * (1.08em), so the two keep their proportions at every width. The mark is 2.92em
- * wide against a 1.85em-tall cap, matching the brand's own wordmark file.
+ * wide against a 1.85em-tall cap, matching the brand's own wordmark file. The
+ * label and actions are offset by that same width from sm up, so they hang off
+ * the wordmark rather than the mark.
  */
+const MARK_OFFSET = 'sm:pl-[3.37em]'
+
 export function HeroSection() {
   return (
     <section className="relative flex w-full flex-1 flex-col items-center justify-center overflow-hidden">
+      {/* Warms the centre of the paper so the lockup sits in light, not on flat colour. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(58% 46% at 50% 44%, color-mix(in oklab, var(--page-accent) 5%, transparent), transparent 70%)',
+        }}
+      />
+
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-16 pt-32 text-center md:px-10">
         <div
-          className="flex animate-rise items-center justify-center gap-[0.45em] motion-reduce:animate-none"
+          className="flex flex-col items-center"
           style={{ fontSize: 'clamp(1.6rem, 8.2vw, 5.25rem)' }}
         >
-          <HeroParticles className="w-[2.92em] shrink-0" />
-          <h1 className="whitespace-nowrap font-space font-semibold text-[1.08em] tracking-[-0.03em] text-[var(--page-heading)]">
-            Meldrum Labs
-          </h1>
+          <div className="flex animate-rise items-center justify-center gap-[0.45em] motion-reduce:animate-none">
+            <HeroParticles className="w-[2.92em] shrink-0" />
+            <h1 className="whitespace-nowrap font-space font-semibold text-[1.08em] tracking-[-0.03em] text-[var(--page-heading)]">
+              Meldrum Labs
+            </h1>
+          </div>
+
+          <div className={`animate-rise motion-reduce:animate-none ${MARK_OFFSET}`} style={{ animationDelay: '90ms' }}>
+            <p className="mt-3 whitespace-nowrap font-space text-[clamp(0.72rem,1.05vw,0.95rem)] font-medium uppercase leading-[1.6] tracking-[0.18em] text-[var(--page-heading)] md:-mt-8">
+              Software factory out of Stockholm
+              <span aria-hidden="true" className="text-[var(--page-accent)]">
+                .
+              </span>
+            </p>
+          </div>
+
+          {/* The offset lives in `em` of the lockup's font size, so it must not sit
+              on an element that sets its own text size — hence the extra wrapper. */}
+          <div
+            className={`mt-7 animate-rise motion-reduce:animate-none ${MARK_OFFSET}`}
+            style={{ animationDelay: '180ms' }}
+          >
+            <div className="flex flex-wrap items-center justify-center gap-4 font-space text-xs font-semibold uppercase tracking-[0.14em]">
+              <Link
+                href="/services"
+                className="bg-[var(--page-ink)] px-7 py-3.5 text-[var(--page-bg)] shadow-[3px_3px_0_var(--page-accent)] transition-[transform,box-shadow] hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_var(--page-accent)]"
+              >
+                What we build
+              </Link>
+              <Link
+                href="/services#lab"
+                className="border-2 border-[var(--page-ink)] px-7 py-3.5 text-[var(--page-ink)] transition-colors hover:bg-[var(--page-ink)] hover:text-[var(--page-bg)]"
+              >
+                About
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

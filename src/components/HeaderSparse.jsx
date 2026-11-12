@@ -3,7 +3,6 @@
 import React, {useState, useEffect } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
-import {Popover, PopoverButton, PopoverPanel} from '@headlessui/react';
 import {navItems} from '@/components/Header';
 import {Logotype} from '@/components/Logotype';
 
@@ -12,47 +11,6 @@ const contactOptions = [
   {name: 'X', detail: '@meldruum', href: 'https://x.com/meldruum'},
   {name: 'LinkedIn', detail: 'Meldrum Labs', href: 'https://www.linkedin.com/company/meldrum-labs'},
 ];
-
-function ContactPopover() {
-  return (
-    <Popover className="relative">
-      <PopoverButton className="group flex items-center text-[var(--page-heading)] px-3 py-2 rounded-md text-sm font-medium leading-6 transition-colors hover:text-[var(--page-ink)] outline-none">
-        <span className="flex items-center gap-1">
-          Contact
-          <svg
-            className="w-3.5 h-3.5 text-[var(--page-muted)] transition-transform duration-200 group-data-[open]:rotate-180"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </span>
-      </PopoverButton>
-      <PopoverPanel
-        anchor="bottom end"
-        transition
-        className="mt-2 w-72 rounded-lg border border-[var(--page-rule)] bg-[var(--page-panel)] shadow-xl transition duration-200 ease-out data-[closed]:opacity-0 data-[closed]:translate-y-1"
-      >
-        <div className="p-2">
-          {contactOptions.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              target={item.href.startsWith('mailto') ? undefined : '_blank'}
-              rel="noopener noreferrer"
-              className="flex items-center justify-between gap-6 rounded-md px-4 py-3 transition-colors hover:bg-[var(--page-rule)]"
-            >
-              <span className="text-sm font-medium text-[var(--page-ink)]">{item.name}</span>
-              <span className="text-xs text-[var(--page-muted)] whitespace-nowrap">{item.detail}</span>
-            </a>
-          ))}
-        </div>
-      </PopoverPanel>
-    </Popover>
-  );
-}
 
 function TopLevelNavItem({ href, children }) {
   return (
@@ -127,9 +85,7 @@ export function HeaderSparse({ revealLogoOnScroll = false }) {
                 {navItems.map((item, i ) => (
                   <TopLevelNavItem key={i} href={item.href}>{item.content}</TopLevelNavItem>
                 ))}
-                <li>
-                  <ContactPopover />
-                </li>
+                <TopLevelNavItem href="mailto:contact@meldrumlabs.com">Contact</TopLevelNavItem>
               </ul>
             </div>
           </div>
