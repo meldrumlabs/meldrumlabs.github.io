@@ -9,10 +9,11 @@ import { HeroParticles } from '@/components/home/HeroParticles'
  * The lockup's font size sets the mark and the wordmark is sized relative to it
  * (1.08em), so the two keep their proportions at every width. The mark is 2.92em
  * wide against a 1.85em-tall cap, matching the brand's own wordmark file. The
- * label and actions are offset by that same width from sm up, so they hang off
- * the wordmark rather than the mark.
+ * label and actions are offset by that same width at every breakpoint, so they
+ * hang off the wordmark rather than the mark — the whole lockup is centred and
+ * the tagline/buttons centre under the wordmark at every width.
  */
-const MARK_OFFSET = 'sm:pl-[3.37em]'
+const MARK_OFFSET = 'pl-[3.37em]'
 
 export function HeroSection() {
   return (
@@ -27,7 +28,7 @@ export function HeroSection() {
         }}
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-16 pt-32 text-center md:px-10">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-16 pt-24 text-center sm:pt-32 md:px-10">
         <div
           className="flex flex-col items-center"
           style={{ fontSize: 'clamp(1.6rem, 8.2vw, 5.25rem)' }}
@@ -40,7 +41,7 @@ export function HeroSection() {
           </div>
 
           <div className={`animate-rise motion-reduce:animate-none ${MARK_OFFSET}`} style={{ animationDelay: '90ms' }}>
-            <p className="mt-3 whitespace-nowrap font-space text-[clamp(0.72rem,1.05vw,0.95rem)] font-medium uppercase leading-[1.6] tracking-[0.18em] text-[var(--page-heading)] md:-mt-8">
+            <p className="mt-3 font-space text-[0.6rem] font-medium uppercase leading-[1.6] tracking-[0.16em] text-[var(--page-heading)] sm:whitespace-nowrap sm:text-[clamp(0.72rem,1.05vw,0.95rem)] sm:tracking-[0.18em] md:-mt-8">
               Reliable Data Systems, Built with Care
               <span aria-hidden="true" className="text-[var(--page-accent)]">
                 .
