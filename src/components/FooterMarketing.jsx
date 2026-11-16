@@ -41,7 +41,7 @@ export function FooterMarketing() {
           </div>
 
           {/* Navigation */}
-          <div className="mt-10 md:mt-0 flex gap-12">
+          <div className="mt-10 grid grid-cols-2 gap-10 sm:mt-0 sm:flex sm:gap-12">
             <div>
               <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--page-heading)]">
                 Open Source

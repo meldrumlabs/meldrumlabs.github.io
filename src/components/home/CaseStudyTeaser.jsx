@@ -9,8 +9,7 @@ const WORK = {
   client: 'Massive',
   engagement: 'Modern financial data infrastructure',
   blurb:
-    'Real-time financial data infrastructure — reliable, high performance, and built to stay in production.',
-  stack: ['Rust', 'Apache Arrow', 'DataFusion'],
+    'Building real-time financial data infrastructure — reliable, high-performance, built in Rust on Apache DataFusion and Arrow.',
   quote:
     'Meldrum Labs operates with a level of care and ownership that shows in the systems they build: reliable, performant, and built for the long term.',
   author: 'Quinton Pike',
@@ -35,12 +34,6 @@ export function CaseStudyTeaser() {
         <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--page-muted)]">
           {WORK.blurb}
         </p>
-
-        <ul className={`${MONO} mt-7 flex flex-wrap gap-x-4 gap-y-2`}>
-          {WORK.stack.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
       </div>
 
       <blockquote className="relative">
