@@ -7,15 +7,15 @@ import { FadeInSection } from '@/components/FadeInSection'
  * The reveal lives on an inner element: a transformed section would move after
  * the browser has already resolved an anchor jump into it.
  */
-export function Section({ id, children, className = '', divider = true }) {
+export function Section({ id, children, className = '', divider = true, fade = true }) {
   return (
     <section
       id={id}
       className={`mx-auto w-full max-w-6xl scroll-mt-28 px-6 py-24 md:px-10 md:py-32 ${
-        divider ? 'border-t border-iroh-gray-800/60' : ''
+        divider ? 'border-t border-[var(--page-rule)]' : ''
       } ${className}`}
     >
-      <FadeInSection>{children}</FadeInSection>
+      {fade ? <FadeInSection>{children}</FadeInSection> : children}
     </section>
   )
 }

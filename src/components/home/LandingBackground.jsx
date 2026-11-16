@@ -40,7 +40,7 @@ export function LandingBackground({ children }) {
 
   return (
     <div className="relative flex min-h-svh flex-col bg-[var(--page-bg)] font-space text-[var(--page-ink)]">
-      <canvas ref={canvasRef} aria-hidden="true" className="fixed inset-0 z-0 h-full w-full" />
+      <canvas ref={canvasRef} aria-hidden="true" className="fixed inset-0 -z-10 h-full w-full" />
       {children}
     </div>
   )

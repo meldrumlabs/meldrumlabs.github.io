@@ -36,7 +36,7 @@ export function FooterMarketing() {
               />
             </div>
             <p className="text-sm leading-relaxed text-[var(--page-muted)]">
-              Data systems out of Sweden.
+              Reliable data systems, built with care.
             </p>
           </div>
 

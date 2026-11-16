@@ -22,12 +22,12 @@ export const metadata = {
   manifest: '/site.webmanifest',
   openGraph: {
     title: 'Meldrum Labs',
-    description: 'Data Systems, Built with care.',
+    description: 'Data Systems, Built with Care.',
     images: [{
       url: '/images/og.png',
       width: 1200,
       height: 630,
-      alt: 'Data Systems, Built with care',
+      alt: 'Data Systems, Built with Care',
       type: 'image/png',
     }],
     type: 'website'

@@ -1,5 +1,5 @@
 import { HeaderSparse } from '@/components/HeaderSparse'
-import { FooterMarketing } from '@/components/FooterMarketing'
+import { FooterSimple } from '@/components/FooterSimple'
 import { ArrowLink, Section, SectionHeading } from '@/components/home/section-parts'
 
 export const metadata = {
@@ -30,11 +30,7 @@ export default function Services() {
         </Section>
 
         <Section id="capabilities">
-          <SectionHeading
-            index="01"
-            title="Capabilities"
-            intro="Research-level depth, applied to systems that have to run in production."
-          />
+          <SectionHeading index="01" title="Capabilities" />
           <p className="mt-10 max-w-2xl text-lg leading-relaxed text-[var(--page-muted)] md:text-xl">
             Meldrum Labs combines research-level depth with hands-on experience building production
             systems. We specialize in Rust, distributed systems, stream processing, database
@@ -44,11 +40,7 @@ export default function Services() {
         </Section>
 
         <Section id="how">
-          <SectionHeading
-            index="02"
-            title="How we work"
-            intro="A build partner, not a body shop: we take ownership and stay close to the code."
-          />
+          <SectionHeading index="02" title="How we work" />
           <div className="mt-10 max-w-2xl space-y-4 text-lg leading-relaxed text-[var(--page-muted)]">
             <p>
               We embed with your team to build critical infrastructure—systems where correctness,
@@ -63,11 +55,7 @@ export default function Services() {
         </Section>
 
         <Section id="lab">
-          <SectionHeading
-            index="03"
-            title="The Lab"
-            intro="Where the method comes from — and what keeps it sharp."
-          />
+          <SectionHeading index="03" title="The Lab" />
           <div className="mt-10 max-w-2xl">
             <p className="text-lg leading-relaxed text-[var(--page-muted)] md:text-xl">
               Meldrum Labs was founded by Max Meldrum after years of research in data systems at
@@ -101,7 +89,7 @@ export default function Services() {
         </Section>
       </main>
 
-      <FooterMarketing />
+      <FooterSimple />
     </div>
   )
 }

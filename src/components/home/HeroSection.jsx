@@ -41,7 +41,7 @@ export function HeroSection() {
 
           <div className={`animate-rise motion-reduce:animate-none ${MARK_OFFSET}`} style={{ animationDelay: '90ms' }}>
             <p className="mt-3 whitespace-nowrap font-space text-[clamp(0.72rem,1.05vw,0.95rem)] font-medium uppercase leading-[1.6] tracking-[0.18em] text-[var(--page-heading)] md:-mt-8">
-              Software factory out of Stockholm
+              Reliable Data Systems, Built with Care
               <span aria-hidden="true" className="text-[var(--page-accent)]">
                 .
               </span>
@@ -55,12 +55,12 @@ export function HeroSection() {
             style={{ animationDelay: '180ms' }}
           >
             <div className="flex flex-wrap items-center justify-center gap-4 font-space text-xs font-semibold uppercase tracking-[0.14em]">
-              <Link
-                href="/services"
+              <a
+                href="#work"
                 className="bg-[var(--page-ink)] px-7 py-3.5 text-[var(--page-bg)] shadow-[3px_3px_0_var(--page-accent)] transition-[transform,box-shadow] hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_var(--page-accent)]"
               >
                 What we build
-              </Link>
+              </a>
               <Link
                 href="/services#lab"
                 className="border-2 border-[var(--page-ink)] px-7 py-3.5 text-[var(--page-ink)] transition-colors hover:bg-[var(--page-ink)] hover:text-[var(--page-bg)]"
