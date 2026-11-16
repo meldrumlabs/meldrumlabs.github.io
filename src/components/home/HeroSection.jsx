@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 import { HeroParticles } from '@/components/home/HeroParticles'
 
 /**
@@ -55,19 +53,22 @@ export function HeroSection() {
             className={`mt-7 animate-rise motion-reduce:animate-none ${MARK_OFFSET}`}
             style={{ animationDelay: '180ms' }}
           >
-            <div className="flex flex-wrap items-center justify-center gap-4 font-space text-xs font-semibold uppercase tracking-[0.14em]">
+            <div className="flex flex-wrap items-center justify-center gap-6 font-space text-xs font-semibold uppercase tracking-[0.14em]">
               <a
                 href="#work"
                 className="bg-[var(--page-ink)] px-7 py-3.5 text-[var(--page-bg)] shadow-[3px_3px_0_var(--page-accent)] transition-[transform,box-shadow] hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_var(--page-accent)]"
               >
-                What we build
+                Our work
               </a>
-              <Link
-                href="/services#lab"
-                className="border-2 border-[var(--page-ink)] px-7 py-3.5 text-[var(--page-ink)] transition-colors hover:bg-[var(--page-ink)] hover:text-[var(--page-bg)]"
+              <a
+                href="mailto:contact@meldrumlabs.com"
+                className="group inline-flex items-center px-0 py-3.5 text-[var(--page-ink)] transition-colors hover:text-[var(--page-link)]"
               >
-                About
-              </Link>
+                Let&rsquo;s build
+                <svg className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
