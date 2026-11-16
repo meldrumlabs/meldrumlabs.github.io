@@ -8,7 +8,7 @@ export default function References({ references = [] }) {
       <ul>
         {references.map((reference, i) => (
           <li key={i}>
-            <a className='text-gray-500' href={reference.url}>{reference.name}</a>
+            <a className='text-[var(--page-muted)] hover:text-[var(--page-ink)]' href={reference.url}>{reference.name}</a>
           </li>
         ))}
       </ul>

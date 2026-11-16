@@ -160,6 +160,59 @@
     @apply bg-background text-foreground;
   }
 
+  /*
+   * Page tokens. Paper is the site; the dark values are kept for the optional
+   * night background on the landing page.
+   */
+  :root,
+  [data-theme='dark'] {
+    --page-bg: #18181b;
+    --page-ink: #f8f8f8;
+    --page-muted: #a1a1aa;
+    --page-heading: #e8dbc8;
+    --page-accent: #f5a23c;
+    --page-link: #f5a23c;
+    --page-rule: #27272a;
+    --page-panel: #18181b;
+    --page-nav: rgba(24, 24, 27, 0.8);
+  }
+
+  /* Paper. Accent and heading move two steps darker to hold contrast. */
+  [data-theme='pearl'] {
+    --page-bg: #fcfbf7;
+    --page-ink: #221f1a;
+    --page-muted: #6b6252;
+    --page-heading: #3b2a1b;
+    --page-accent: #bc550c;
+    --page-link: #964412;
+    --page-rule: #e7e1d5;
+    --page-panel: #ffffff;
+    --page-nav: rgba(252, 251, 247, 0.85);
+  }
+
+  /*
+   * Typography's defaults are neutral grey. On paper they should be the same
+   * warm ink as the rest of the site.
+   */
+  [data-theme='pearl'] .prose {
+    --tw-prose-body: #3a332a;
+    --tw-prose-headings: #221f1a;
+    --tw-prose-lead: #4a4438;
+    --tw-prose-links: #964412;
+    --tw-prose-bold: #221f1a;
+    --tw-prose-counters: #6b6252;
+    --tw-prose-bullets: #c9c2b4;
+    --tw-prose-hr: #e7e1d5;
+    --tw-prose-quotes: #4a4438;
+    --tw-prose-quote-borders: #e7e1d5;
+    --tw-prose-captions: #6b6252;
+    --tw-prose-code: #964412;
+    --tw-prose-pre-code: #efeae0;
+    --tw-prose-pre-bg: #1f1d1a;
+    --tw-prose-th-borders: #e7e1d5;
+    --tw-prose-td-borders: #efeae0;
+  }
+
   /* Film grain overlay */
   body::after {
     content: '';
@@ -177,7 +230,7 @@
   }
 
   *:focus-visible {
-    outline: 2px solid rgba(152, 151, 26, 0.5);
+    outline: 2px solid color-mix(in oklab, var(--page-accent) 60%, transparent);
     outline-offset: 2px;
     border-radius: 4px;
   }

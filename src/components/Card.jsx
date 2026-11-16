@@ -34,7 +34,7 @@ export function Card({ as, className, children }) {
 Card.Link = function CardLink({ children, ...props }) {
   return (
     <>
-      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-iroh-gray-800/50 opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded group-hover:shadow-lg group-hover:shadow-meldrum-green-400/5" />
+      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-[var(--page-rule)]/60 opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded group-hover:shadow-lg group-hover:shadow-black/5" />
       <Link {...props}>
         <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
@@ -47,7 +47,7 @@ Card.Title = function CardTitle({ as, href, children }) {
   let Component = as ?? 'h2'
 
   return (
-    <Component className="text-2xl font-space tracking-tight text-meldrum-green-400">
+    <Component className="text-2xl font-space tracking-tight text-[var(--page-heading)]">
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
     </Component>
   )
@@ -55,7 +55,7 @@ Card.Title = function CardTitle({ as, href, children }) {
 
 Card.Description = function CardDescription({ children }) {
   return (
-    <p className="relative z-10 mt-2 text-sm text-iroh-gray-600 dark:text-iroh-gray-400">
+    <p className="relative z-10 mt-2 text-sm text-[var(--page-muted)]">
       {children}
     </p>
   )
@@ -65,7 +65,7 @@ Card.Cta = function CardCta({ children }) {
   return (
     <div
       aria-hidden="true"
-      className="relative z-10 mt-4 flex items-center text-sm font-medium text-meldrum-pink-100"
+      className="relative z-10 mt-4 flex items-center text-sm font-medium text-[var(--page-accent)]"
     >
       {children}
       <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />

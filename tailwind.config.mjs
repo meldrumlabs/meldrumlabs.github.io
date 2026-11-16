@@ -143,11 +143,18 @@ export default {
 
       },
       animation: {
-        fadeIn: "fadeIn 500ms ease-in forwards"
+        fadeIn: "fadeIn 500ms ease-in forwards",
+        // CSS-only entrance: server-rendered text paints immediately and does
+        // not wait for hydration to become visible (LCP).
+        rise: "rise 700ms cubic-bezier(0.21, 0.47, 0.32, 0.98) both",
       },
       keyframes: {
         fadeIn: {
           "0%": { opacity: 0, transform: 'translateY(2vh)' },
+          "100%": { opacity: 1, transform: 'translateY(0)' }
+        },
+        rise: {
+          "0%": { opacity: 0, transform: 'translateY(0.4em)' },
           "100%": { opacity: 1, transform: 'translateY(0)' }
         }
       }

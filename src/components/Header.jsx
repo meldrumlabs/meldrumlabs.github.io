@@ -25,7 +25,7 @@ export function TopLevelNavItem({href, children}) {
     <li>
       <Link
         href={href}
-        className="text-sm leading-5 text-meldrum-green-600 transition hover:text-zinc-900 dark:text-meldrum-green-400 dark:hover:text-white"
+        className="text-sm leading-5 text-[var(--page-heading)] transition hover:text-[var(--page-ink)]"
       >
         {children}
       </Link>

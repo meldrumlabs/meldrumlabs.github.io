@@ -22,12 +22,12 @@ export const metadata = {
   manifest: '/site.webmanifest',
   openGraph: {
     title: 'Meldrum Labs',
-    description: 'Data Systems, Built with care.',
+    description: 'Data Systems, Built with Care.',
     images: [{
       url: '/images/og.png',
       width: 1200,
       height: 630,
-      alt: 'Data Systems, Built with care',
+      alt: 'Data Systems, Built with Care',
       type: 'image/png',
     }],
     type: 'website'
@@ -45,10 +45,10 @@ export default async function RootLayout({children}) {
   let allSections = Object.fromEntries(allSectionEntries);
 
   return (
-    <html lang="en" className="h-full dark" suppressHydrationWarning>
+    <html lang="en" data-theme="pearl" className="h-full" suppressHydrationWarning>
       <head>
       </head>
-      <body className="flex min-h-full bg-zinc-900">
+      <body className="flex min-h-full bg-[var(--page-bg)] text-[var(--page-ink)]">
         <Providers>
           <div className="w-full dark">
             {children}
