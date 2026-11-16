@@ -39,7 +39,7 @@ export function HeroSection() {
           </div>
 
           <div className={`-mt-[0.15em] animate-rise motion-reduce:animate-none ${MARK_OFFSET}`} style={{ animationDelay: '90ms' }}>
-            <p className="font-space text-[0.6rem] font-medium uppercase leading-[1.5] tracking-[0.16em] text-[var(--page-heading)] sm:whitespace-nowrap sm:text-[clamp(0.72rem,1.05vw,0.95rem)] sm:leading-[1.6] sm:tracking-[0.18em] md:-mt-8">
+            <p className="font-space text-[0.6rem] font-medium uppercase leading-[1.5] tracking-[0.16em] text-[var(--page-heading)] sm:whitespace-nowrap sm:text-[clamp(0.72rem,1.05vw,0.95rem)] sm:leading-[1.6] sm:tracking-[0.18em] md:-mt-3">
               Reliable Data Systems, Built with Care
               <span aria-hidden="true" className="text-[var(--page-accent)]">
                 .
@@ -48,9 +48,11 @@ export function HeroSection() {
           </div>
 
           {/* The offset lives in `em` of the lockup's font size, so it must not sit
-              on an element that sets its own text size — hence the extra wrapper. */}
+              on an element that sets its own text size — hence the extra wrapper.
+              Offset only from `sm` up: on phones the padding eats the row's width
+              and forces the two buttons to wrap. */}
           <div
-            className={`mt-[0.6em] animate-rise motion-reduce:animate-none md:mt-7 ${MARK_OFFSET}`}
+            className={`mt-[0.6em] animate-rise motion-reduce:animate-none sm:pl-[3.37em] md:mt-7`}
             style={{ animationDelay: '180ms' }}
           >
             <div className="flex flex-wrap items-center justify-center gap-6 font-space text-xs font-semibold uppercase tracking-[0.14em]">
