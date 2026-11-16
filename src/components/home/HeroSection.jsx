@@ -38,8 +38,8 @@ export function HeroSection() {
             </h1>
           </div>
 
-          <div className={`animate-rise motion-reduce:animate-none ${MARK_OFFSET}`} style={{ animationDelay: '90ms' }}>
-            <p className="mt-3 font-space text-[0.6rem] font-medium uppercase leading-[1.6] tracking-[0.16em] text-[var(--page-heading)] sm:whitespace-nowrap sm:text-[clamp(0.72rem,1.05vw,0.95rem)] sm:tracking-[0.18em] md:-mt-8">
+          <div className={`-mt-[0.15em] animate-rise motion-reduce:animate-none ${MARK_OFFSET}`} style={{ animationDelay: '90ms' }}>
+            <p className="font-space text-[0.6rem] font-medium uppercase leading-[1.5] tracking-[0.16em] text-[var(--page-heading)] sm:whitespace-nowrap sm:text-[clamp(0.72rem,1.05vw,0.95rem)] sm:leading-[1.6] sm:tracking-[0.18em] md:-mt-8">
               Reliable Data Systems, Built with Care
               <span aria-hidden="true" className="text-[var(--page-accent)]">
                 .
@@ -50,7 +50,7 @@ export function HeroSection() {
           {/* The offset lives in `em` of the lockup's font size, so it must not sit
               on an element that sets its own text size — hence the extra wrapper. */}
           <div
-            className={`mt-7 animate-rise motion-reduce:animate-none ${MARK_OFFSET}`}
+            className={`mt-[0.6em] animate-rise motion-reduce:animate-none md:mt-7 ${MARK_OFFSET}`}
             style={{ animationDelay: '180ms' }}
           >
             <div className="flex flex-wrap items-center justify-center gap-6 font-space text-xs font-semibold uppercase tracking-[0.14em]">
