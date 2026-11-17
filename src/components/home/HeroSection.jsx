@@ -47,18 +47,18 @@ export function HeroSection() {
             </p>
           </div>
 
-          {/* The offset lives in `em` of the lockup's font size, so it must not sit
-              on an element that sets its own text size — hence the extra wrapper.
-              Offset only from `sm` up: on phones the padding eats the row's width
-              and forces the two buttons to wrap. */}
+          {/* Keep the CTA centre under the wordmark. Use a transform on phones so
+              the alignment doesn't consume the narrow row's available width. */}
           <div
-            className={`mt-[0.6em] animate-rise motion-reduce:animate-none sm:pl-[3.37em] md:mt-7`}
+            className="mt-[0.6em] translate-x-[1.685em] animate-rise motion-reduce:animate-none sm:translate-x-0 sm:pl-[3.37em] md:mt-7"
             style={{ animationDelay: '180ms' }}
           >
-            <div className="flex flex-wrap items-center justify-center gap-6 font-space text-xs font-semibold uppercase tracking-[0.14em]">
+            {/* Smaller and tighter on phones so the CTAs read as a pair under the
+                lockup rather than a wall of buttons; full size from `sm` up. */}
+            <div className="flex flex-wrap items-center justify-center gap-4 font-space text-[0.7rem] font-semibold uppercase tracking-[0.12em] sm:gap-6 sm:text-xs sm:tracking-[0.14em]">
               <a
                 href="#work"
-                className="bg-[var(--page-ink)] px-7 py-3.5 text-[var(--page-bg)] shadow-[3px_3px_0_var(--page-accent)] transition-[transform,box-shadow] hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_var(--page-accent)]"
+                className="bg-[var(--page-ink)] px-4 py-3.5 text-[var(--page-bg)] shadow-[3px_3px_0_var(--page-accent)] transition-[transform,box-shadow] hover:translate-x-[1.5px] hover:translate-y-[1.5px] hover:shadow-[1.5px_1.5px_0_var(--page-accent)] sm:px-7"
               >
                 Our work
               </a>
